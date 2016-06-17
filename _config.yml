@@ -6,12 +6,12 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "ja-JP"
+locale                   : "en-US"
 title                    : "ninoseki.github.io"
 title_separator          : "-"
 name                     : "ninoseki"
 description              : "a website of noniseki"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      :
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -46,8 +46,8 @@ analytics:
     tracking_id          : "UA-26296840-4"
 
 # Google AdSense
-google_ad_client         :
-google_ad_slot           :
+# google_ad_client         :
+# google_ad_slot           :
 
 
 # Site Author
@@ -86,6 +86,7 @@ author:
 include:
   - .htaccess
   - _pages
+  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -140,7 +141,7 @@ kramdown:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Tokyo
 
 
 # Plugins
