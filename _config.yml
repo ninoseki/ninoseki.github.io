@@ -41,7 +41,7 @@ social:
 
 # Analytics
 analytics:
-  provider               : true
+  provider               : "google"
   google:
     tracking_id          : "UA-26296840-4"
 
