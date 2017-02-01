@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   name             : "ninoseki"
-  avatar           : "bio-photo.jpg"
+  avatar           : "images/bio-photo.jpg"
   bio              : "I am an engineer, rubysit and boulderer"
   location         : "Tokyo, Japan"
   email            :
