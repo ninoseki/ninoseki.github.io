@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   name             : "ninoseki"
-  avatar           : "images/bio-photo.jpg"
+  avatar           : "https://avatars3.githubusercontent.com/ninoseki"
   bio              : "I am an engineer, rubysit and boulderer"
   location         : "Tokyo, Japan"
   email            :
@@ -230,6 +230,9 @@ compress_html:
   ignore:
     envs: development
 
+# Custom Settings
+jekyll-mentions:
+  base_url: https://twitter.com 
 
 # Defaults
 defaults:
