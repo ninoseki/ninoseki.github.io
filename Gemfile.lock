@@ -198,6 +198,7 @@ DEPENDENCIES
   github-pages
   jekyll-feed
   jekyll-gist
+  jekyll-mentions
   jekyll-paginate
   jekyll-sitemap
   jemoji
