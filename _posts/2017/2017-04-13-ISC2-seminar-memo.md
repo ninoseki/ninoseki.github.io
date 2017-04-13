@@ -6,7 +6,10 @@ excerpt: ISC2公式セミナーの聴講メモ
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">4月8日（土）に日本マイクロソフト品川本社にて開催された、「CISSP meets Microsoft」と、「DevSecOps時代の現場の負担を軽減させるセキュリティ環境構築」、たくさんの方にご参加いただきました。 <a href="https://t.co/vFyekjm8gE">pic.twitter.com/vFyekjm8gE</a></p>&mdash; ISC2_Japan (@ISC2_Japan) <a href="https://twitter.com/ISC2_Japan/status/851713298479198208">2017年4月11日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
 後者の方に参加してきた。雑だけどメモを残しておく。
+
+
 最後のパネルディスカッションの内容が面白かったけど、メモを撮り忘れたので割愛している。すいません。
 
 ## ITの潮流としてのDevOpsとその課題 by MS 田丸健三郎
@@ -39,13 +42,13 @@ excerpt: ISC2公式セミナーの聴講メモ
     * どの程度の攻撃を受けているのか把握して報告
       * 加えて、セキュリティ対策を通過した攻撃について何からの方法で計測を行う必要がある
     * CISOダッシュボード
-      * 1. Attack condition(攻撃検出状況に関するKPI)
+      * Attack condition(攻撃検出状況に関するKPI)
         * e.g. AV/IDS等によるアラート
-      * 2. Protect condition(対策状況に関するKPI)
+      * Protect condition(対策状況に関するKPI)
         * e.g. セキュリティ対策として実施すべき項目(パッチの適用など)の適用率
-      * 3. Suspicious activity(侵入が疑われる状況のKPI)
+      * Suspicious activity(侵入が疑われる状況のKPI)
         * e.g. SIEMによる検出や内部犯行を含んだ疑わしいイベント
-      * 4. Indirect activity(人事的、物理的など直接ITとは関係しない状況のKPI
+      * Indirect activity(人事的、物理的など直接ITとは関係しない状況のKPI
         * e.g. デバイスの紛失盗難、外部からのインテリジェンス
 
 ## 備考
