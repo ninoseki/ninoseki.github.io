@@ -178,7 +178,7 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -232,7 +232,7 @@ compress_html:
 
 # Custom Settings
 jekyll-mentions:
-  base_url: https://twitter.com 
+  base_url: https://twitter.com
 
 # Defaults
 defaults:
