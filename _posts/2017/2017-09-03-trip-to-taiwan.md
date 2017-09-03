@@ -3,7 +3,7 @@ title: 2017年夏、台湾出張の思い出
 excerpt: 2017年夏の台湾出張の思い出
 ---
 
-2017/08/24-2017/08/31の期間で台湾出張をしてきたので、行った場所・お店などをまとめてみるよ。
+2017/08/24-2017/08/31の期間で台湾出張をしてきたので、行った場所・お店などをまとめてみる。
 
 ## Day 1
 羽田から台北松山にNH0853でフライト。
@@ -11,7 +11,10 @@ excerpt: 2017年夏の台湾出張の思い出
 夕飯は先輩のチョイスで「阿才的店」に行く。なんでもNHK BSの[「世界入りにくい居酒屋」という番組で取り上げらたお店](http://www.nhk.or.jp/nikui/18_taipei/)とのこと。
 
 <a href="https://imgur.com/WJoSeze"><img src="https://i.imgur.com/WJoSeze.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/w5LxjeE"><img src="https://i.imgur.com/w5LxjeE.jpg" title="source: imgur.com" /></a>
+
+
+<a href="https://imgur.com/w5LxjeE">
+<img src="https://i.imgur.com/w5LxjeE.jpg" title="source: imgur.com" /></a>
 どこが入りにくいのかはよくわからなかった(店構えがボロいとこ?)。料理は美味しいし価格もリーズナブルだし、日本語メニューもあるので、むしろ入りやすいくらい。よかった。
 
 2軒目はホテルの近くのビアパブ「Jolly」をチョイス。何故かフードメニューはタイカレーがメイン。カレーを単品で頼もうとしたら、ソルティーだから絶対にライスも頼んだほうがいいと念押しされる。確かにその通りにかなり塩辛い。
@@ -30,6 +33,8 @@ excerpt: 2017年夏の台湾出張の思い出
 <a href="https://imgur.com/JMxslu4"><img src="https://i.imgur.com/JMxslu4.jpg" title="source: imgur.com" /></a>
 まずは入口付近にある有名店「福州世祖胡椒餅」を1つ。
 <a href="https://imgur.com/2lhH7VC"><img src="https://i.imgur.com/2lhH7VC.jpg" title="source: imgur.com" /></a>
+
+
 <a href="https://imgur.com/ihJiVGJ"><img src="https://i.imgur.com/ihJiVGJ.jpg" title="source: imgur.com" /></a>
 この胡椒餅、ボリュームたっぷり肉汁たっぷりでうまい!しかも1個50NTD。これはマストでしょ。
 
@@ -37,7 +42,11 @@ excerpt: 2017年夏の台湾出張の思い出
 <a href="https://imgur.com/CxoE2ZR"><img src="https://i.imgur.com/CxoE2ZR.jpg" title="source: imgur.com" /></a>
 生臭豆腐、揚げ臭豆腐、蒸し臭豆腐の3種類を1つずつオーダー。
 <a href="https://imgur.com/3Deu6bS"><img src="https://i.imgur.com/3Deu6bS.jpg" title="source: imgur.com" /></a>
+
+
 <a href="https://imgur.com/gx6L4Kr"><img src="https://i.imgur.com/gx6L4Kr.jpg" title="source: imgur.com" /></a>
+
+
 <a href="https://imgur.com/TWt0hpj"><img src="https://i.imgur.com/TWt0hpj.jpg" title="source: imgur.com" /></a>
 生 > 蒸し > 揚げの順に臭いがきつい。が、全然普通に食べれる。むしろ美味しい。ビールを頼んだ置いてなかったのが玉に瑕。絶対ビールと合うと思うんだけどなあ。
 
@@ -56,6 +65,8 @@ SUNMAIやTaihuのビールを飲んだり、飲んだ勢いでナンパを試み
 
 2軒目は「[Waiting Room](http://waitingroomtw.bigcartel.com/)」。透明雑誌のメンバーが経営しているレコ屋とのこと。
 <a href="https://imgur.com/cbVKL0R"><img src="https://i.imgur.com/cbVKL0R.jpg" title="source: imgur.com" /></a>
+
+
 <a href="https://imgur.com/YRVA1V0"><img src="https://i.imgur.com/YRVA1V0.jpg" title="source: imgur.com" /></a>
 USインディーズ、特にPolyvinyl Records系(つまりはエモ)の品揃えが多くてニヤリ。お前もエモ好きか〜って。
 ここでも視聴させてもらってアルバムを3枚ほど購入。お目当てだった透明雑誌のフロントマン・洪申豪のソロアルバムも2枚買えた。やったぜ。
@@ -64,6 +75,8 @@ USインディーズ、特にPolyvinyl Records系(つまりはエモ)の品揃�
 
 夜は西門の近くにある「西門金峰」で魯肉飯をいただく。有名店「金峰魯肉飯」の系列店。(地元の人にいわせると偽物だそうだけど)
 <a href="https://imgur.com/fmSyyr6"><img src="https://i.imgur.com/fmSyyr6.jpg" title="source: imgur.com" /></a>
+
+
 <a href="https://imgur.com/DTihpuQ"><img src="https://i.imgur.com/DTihpuQ.jpg" title="source: imgur.com" /></a>
 まあ普通。そんなに混んでないので、ファーストフード感覚でさっくと食べたい場合には良いかな。
 
@@ -74,3 +87,42 @@ DJプレイも行われているオシャレなラウンジ。
 誰かに話しかけてみようと思うも、地蔵になってしまい何もできず・・・。反省。結果一人でちびちびビールを舐めることに。
 <a href="https://imgur.com/dmfL7g6"><img src="https://i.imgur.com/dmfL7g6.jpg" title="source: imgur.com" /></a>
 日本語が話せる店員さんもいるし、価格もリーズナブルなのでお店自体はオススメ。コミュ障が一人でいくのは辛い。(当たり前か)
+
+## Day 5
+
+昼ごはんはホテルの近くの人気店「慶城海南鶏飯」で。流石の人気で開店数分後にはすでに行列ができていた。
+<a href="https://imgur.com/QhzStYV"><img src="https://i.imgur.com/QhzStYV.jpg" title="source: imgur.com" /></a>
+ただ回転は早いので数分で着席。
+<a href="https://imgur.com/ossvyqd"><img src="https://i.imgur.com/ossvyqd.jpg" title="source: imgur.com" /></a>
+チキンが柔らかくて美味しい。付け合せのソース?は塩気強めなので少量でいいかも。
+
+夜は桃園のホテルで会食。
+<a href="https://imgur.com/KfaYFO5"><img src="https://i.imgur.com/KfaYFO5.jpg" title="source: imgur.com" /></a>
+相手先のお偉いさんに高梁酒(ABV56)のショットを進められるも華麗にスルーすることに成功。一気飲み文化って台湾にもあるんだと驚く。
+
+## Day 6
+お昼休みに永康街の「思慕昔」へ。長蛇の列。
+<a href="https://imgur.com/sQMfNzz"><img src="https://i.imgur.com/sQMfNzz.jpg" title="source: imgur.com" /></a>
+美味しいは美味しいけど、並んでまでかき氷食べたいか?という素朴な疑問が拭えない。。。
+
+夜飲んだあとは「永和豆醤」で締めに豆醤を1つ。一番安いのを頼んでみたら具がゼロの状態で出てきたので少し後悔。ただの豆乳だこれ。
+<a href="https://imgur.com/afaWTXz"><img src="https://i.imgur.com/afaWTXz.jpg" title="source: imgur.com" /></a>
+
+## Day 7
+夕飯はチェリーダックのお店「櫻桃谷」で。
+<a href="https://imgur.com/yDGksda"><img src="https://i.imgur.com/yDGksda.jpg" title="source: imgur.com" /></a>
+鴨を1羽まるごとコースにして出してくれるお店。寿司のネタにしたり、ライスペーパーで包んでみたりお粥にしてみたりとまさに鴨づくし。うまかった!
+
+飲み足りなかったので、次は「家途中啤酒屋(Way Home Beer House)」へ。タップが5種類とボトルが沢山あるお店。台北ではこういうボトルメインでクラフトビールを扱うお店が流行っているらしい。
+<a href="https://imgur.com/R5yVgxI"><img src="https://i.imgur.com/R5yVgxI.jpg" title="source: imgur.com" /></a>
+台湾のローカルビールが飲みたいよね、ということでJim & DadのセッションIPAとMikkeller TaipeiのサワーIPAをチョイス。
+<a href="https://imgur.com/gHc0Jyy"><img src="https://i.imgur.com/gHc0Jyy.jpg" title="source: imgur.com" /></a>
+
+
+<a href="https://imgur.com/Uj16uNF"><img src="https://i.imgur.com/Uj16uNF.jpg" title="source: imgur.com" /></a>
+どちらもかなりのクオリティ。特にJim & DadのセッションIPAはアロマの香りが気持ちいいグビグビ系。もう一回飲みたい。
+
+## Day 8
+どこかに観光しに行く元気もなく、おとなしく空港に向かいNH0852で羽田にフライト。
+
+食べ歩きしたおかげで1.5-2.0kgくらい増量してた。落とさねば。。。
