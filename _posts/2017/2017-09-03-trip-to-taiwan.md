@@ -24,7 +24,7 @@ excerpt: 2017年夏の台湾出張の思い出
 ## Day 2
 仕事終わりにふらっと寧夏夜市で夕飯。
 <a href="https://imgur.com/Jzmx1Pj"><img src="https://i.imgur.com/Jzmx1Pj.jpg" title="source: imgur.com" /></a>
-お目当ては臭豆腐!。一通り夜市をぶらっと見てみてから、臭豆腐を出すお店で一番混雑していた「里長伯」で麻辣臭豆腐をオーダー。
+お目当ては臭豆腐! 一通り夜市をぶらっと見てみてから、臭豆腐を出すお店で一番混雑していた「里長伯」で麻辣臭豆腐をオーダー。
 <a href="https://imgur.com/V2k1Yz7"><img src="https://i.imgur.com/V2k1Yz7.jpg" title="source: imgur.com" /></a>
 確かに豆腐は臭いけど、しばらくすると慣れるレベル。というか麻辣の辛味が臭みを上回っているのですんなり食べれる。オススメ。
 
@@ -48,9 +48,9 @@ excerpt: 2017年夏の台湾出張の思い出
 
 
 <a href="https://imgur.com/TWt0hpj"><img src="https://i.imgur.com/TWt0hpj.jpg" title="source: imgur.com" /></a>
-生 > 蒸し > 揚げの順に臭いがきつい。が、全然普通に食べれる。むしろ美味しい。ビールを頼んだ置いてなかったのが玉に瑕。絶対にビールと合うと思うんだけどなあ。
+生 > 蒸し > 揚げの順に臭いがきつい。が、全然普通に食べれる。むしろ美味しい。ビールを頼んだけど置いてなかったのが玉に瑕。絶対にビールと合うと思うんだけどなあ。
 
-3軒目はうって変わって101近くの「Commune A7」に。
+3軒目は101の近くの「Commune A7」で。いろんな露店が出ているビアガーデン風の場所。
 <a href="https://imgur.com/K1i4bmc"><img src="https://i.imgur.com/K1i4bmc.jpg" title="source: imgur.com" /></a>
 SUNMAIやTaihuのビールを飲んだり、飲んだ勢いでナンパを試みたり。結果は・・・まあアレですね、地蔵にならなかっただけ良しとしましょう。
 <a href="https://imgur.com/mTp41tu"><img src="https://i.imgur.com/mTp41tu.jpg" title="source: imgur.com" /></a>
@@ -98,7 +98,7 @@ DJプレイも行われているオシャレなラウンジ。
 
 夜は桃園のホテルで会食。
 <a href="https://imgur.com/KfaYFO5"><img src="https://i.imgur.com/KfaYFO5.jpg" title="source: imgur.com" /></a>
-相手先のお偉いさんに高梁酒(ABV56)のショットを進められるも華麗にスルーすることに成功。一気飲み文化って台湾にもあるんだと驚く。
+相手先のお偉いさんに高梁酒(ABV56)のショットを進められるも華麗にスルーすることに成功。一気飲み文化って台湾にもあるんだと驚く。やれやれ。
 
 ## Day 6
 お昼休みに永康街の「思慕昔」へ。長蛇の列。
