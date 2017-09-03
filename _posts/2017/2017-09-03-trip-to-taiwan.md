@@ -8,7 +8,7 @@ excerpt: 2017年夏の台湾出張の思い出
 ## Day 1
 羽田から台北松山にNH0853でフライト。
 
-夕飯は先輩のチョイスで「阿才的店」に行く。なんでもNHK BSの[「世界入りにくい居酒屋」という番組で取り上げらたお店](http://www.nhk.or.jp/nikui/18_taipei/)とのこと。
+夕飯は先輩のチョイスで「阿才的店」に行く。なんでもNHK BSの[「世界入りにくい居酒屋」という番組で取り上げられたお店](http://www.nhk.or.jp/nikui/18_taipei/)とのこと。
 
 <a href="https://imgur.com/WJoSeze"><img src="https://i.imgur.com/WJoSeze.jpg" title="source: imgur.com" /></a>
 
@@ -31,7 +31,7 @@ excerpt: 2017年夏の台湾出張の思い出
 ## Day 3
 明日は休みだ!飲むぞ!ということでまずは饒河街観光夜市へ。
 <a href="https://imgur.com/JMxslu4"><img src="https://i.imgur.com/JMxslu4.jpg" title="source: imgur.com" /></a>
-まずは入口付近にある有名店「福州世祖胡椒餅」を1つ。
+まずは入口付近にある有名店「福州世祖胡椒餅」で胡椒餅を1つ。
 <a href="https://imgur.com/2lhH7VC"><img src="https://i.imgur.com/2lhH7VC.jpg" title="source: imgur.com" /></a>
 
 
@@ -48,7 +48,7 @@ excerpt: 2017年夏の台湾出張の思い出
 
 
 <a href="https://imgur.com/TWt0hpj"><img src="https://i.imgur.com/TWt0hpj.jpg" title="source: imgur.com" /></a>
-生 > 蒸し > 揚げの順に臭いがきつい。が、全然普通に食べれる。むしろ美味しい。ビールを頼んだ置いてなかったのが玉に瑕。絶対ビールと合うと思うんだけどなあ。
+生 > 蒸し > 揚げの順に臭いがきつい。が、全然普通に食べれる。むしろ美味しい。ビールを頼んだ置いてなかったのが玉に瑕。絶対にビールと合うと思うんだけどなあ。
 
 3軒目はうって変わって101近くの「Commune A7」に。
 <a href="https://imgur.com/K1i4bmc"><img src="https://i.imgur.com/K1i4bmc.jpg" title="source: imgur.com" /></a>
@@ -56,7 +56,7 @@ SUNMAIやTaihuのビールを飲んだり、飲んだ勢いでナンパを試み
 <a href="https://imgur.com/mTp41tu"><img src="https://i.imgur.com/mTp41tu.jpg" title="source: imgur.com" /></a>
 
 ## Day 4
-1日フリーだったので、台北市内のレコード屋を2軒ほどハシゴしてみることにした。
+1日フリーだったので、台北市内のレコード屋を2軒ほどハシゴしてみることに。
 台湾の音楽、というと透明雑誌くらいしか思いつかないレベルなので、この機会に見聞を広めたいなと思った次第。
 
 まず1軒目は「[White Wabbit Records](http://www.wwr.com.tw/)」。シューゲイザー、ポストロック系の品揃えが充実しているレコ屋。
@@ -71,7 +71,7 @@ SUNMAIやTaihuのビールを飲んだり、飲んだ勢いでナンパを試み
 USインディーズ、特にPolyvinyl Records系(つまりはエモ)の品揃えが多くてニヤリ。お前もエモ好きか〜って。
 ここでも視聴させてもらってアルバムを3枚ほど購入。お目当てだった透明雑誌のフロントマン・洪申豪のソロアルバムも2枚買えた。やったぜ。
 
-このお店の中で一軒目にもいた人と会話してみたら、同じく日本人で吃驚。同じ時間帯に同じルートでレコ屋巡りするってどんだけ奇遇なんだ。あとからTwitterでフォローし合う。いや本当にすごい偶然だ。
+このお店の中で1軒目でも遭遇した人と会話してみたら、同じく日本人で吃驚。同じ時間帯に同じルートでレコ屋巡りするってどんだけ奇遇なんだ。後からTwitterでフォローし合う。いや本当にすごい偶然だ。
 
 夜は西門の近くにある「西門金峰」で魯肉飯をいただく。有名店「金峰魯肉飯」の系列店。(地元の人にいわせると偽物だそうだけど)
 <a href="https://imgur.com/fmSyyr6"><img src="https://i.imgur.com/fmSyyr6.jpg" title="source: imgur.com" /></a>
