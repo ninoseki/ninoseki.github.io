@@ -45,3 +45,32 @@ excerpt: 2017年夏の台湾出張の思い出
 <a href="https://imgur.com/K1i4bmc"><img src="https://i.imgur.com/K1i4bmc.jpg" title="source: imgur.com" /></a>
 SUNMAIやTaihuのビールを飲んだり、飲んだ勢いでナンパを試みたり。結果は・・・まあアレですね、地蔵にならなかっただけ良しとしましょう。
 <a href="https://imgur.com/mTp41tu"><img src="https://i.imgur.com/mTp41tu.jpg" title="source: imgur.com" /></a>
+
+## Day 4
+1日フリーだったので、台北市内のレコード屋を2軒ほどハシゴしてみることにした。
+台湾の音楽、というと透明雑誌くらいしか思いつかないレベルなので、この機会に見聞を広めたいなと思った次第。
+
+まず1軒目は「[White Wabbit Records](http://www.wwr.com.tw/)」。シューゲイザー、ポストロック系の品揃えが充実しているレコ屋。
+<a href="https://imgur.com/CGRTBog"><img src="https://i.imgur.com/CGRTBog.jpg" title="source: imgur.com" /></a>
+店員さんに台湾インディーズのオススメを教えてもらったり視聴させてもらってアルバムを4枚ほど購入。
+
+2軒目は「[Waiting Room](http://waitingroomtw.bigcartel.com/)」。透明雑誌のメンバーが経営しているレコ屋とのこと。
+<a href="https://imgur.com/cbVKL0R"><img src="https://i.imgur.com/cbVKL0R.jpg" title="source: imgur.com" /></a>
+<a href="https://imgur.com/YRVA1V0"><img src="https://i.imgur.com/YRVA1V0.jpg" title="source: imgur.com" /></a>
+USインディーズ、特にPolyvinyl Records系(つまりはエモ)の品揃えが多くてニヤリ。お前もエモ好きか〜って。
+ここでも視聴させてもらってアルバムを3枚ほど購入。お目当てだった透明雑誌のフロントマン・洪申豪のソロアルバムも2枚買えた。やったぜ。
+
+このお店の中で一軒目にもいた人と会話してみたら、同じく日本人で吃驚。同じ時間帯に同じルートでレコ屋巡りするってどんだけ奇遇なんだ。あとからTwitterでフォローし合う。いや本当にすごい偶然だ。
+
+夜は西門の近くにある「西門金峰」で魯肉飯をいただく。有名店「金峰魯肉飯」の系列店。(地元の人にいわせると偽物だそうだけど)
+<a href="https://imgur.com/fmSyyr6"><img src="https://i.imgur.com/fmSyyr6.jpg" title="source: imgur.com" /></a>
+<a href="https://imgur.com/DTihpuQ"><img src="https://i.imgur.com/DTihpuQ.jpg" title="source: imgur.com" /></a>
+まあ普通。そんなに混んでないので、ファーストフード感覚でさっくと食べたい場合には良いかな。
+
+一杯どこかで飲みたい気分になったので、ミュージックラウンジ「Double Check」に一人で突撃。
+<a href="https://imgur.com/4hZVIBf"><img src="https://i.imgur.com/4hZVIBf.jpg" title="source: imgur.com" /></a>
+DJプレイも行われているオシャレなラウンジ。
+<a href="https://imgur.com/yNdpEWC"><img src="https://i.imgur.com/yNdpEWC.jpg" title="source: imgur.com" /></a>
+誰かに話しかけてみようと思うも、地蔵になってしまい何もできず・・・。反省。結果一人でちびちびビールを舐めることに。
+<a href="https://imgur.com/dmfL7g6"><img src="https://i.imgur.com/dmfL7g6.jpg" title="source: imgur.com" /></a>
+日本語が話せる店員さんもいるし、価格もリーズナブルなのでお店自体はオススメ。コミュ障が一人でいくのは辛い。(当たり前か)
