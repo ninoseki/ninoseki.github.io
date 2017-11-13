@@ -1,6 +1,6 @@
 ---
-title: Ceynsysで日本国内におけるCoinhiveの使用状況を調べてみた
-excerpt: Ceynsysで日本国内におけるCoinhiveの使用状況を調べてみた
+title: Censysで日本国内におけるCoinhiveの使用状況を調べてみた
+excerpt: Censysで日本国内におけるCoinhiveの使用状況を調べてみた
 category: security
 tags: [cryptojacking]
 ---
