@@ -1,6 +1,8 @@
 ---
 title: Cryptojackingについてまとめてみた
 excerpt: Cryptojackingについてまとめてみた
+category: security
+tags: [cryptojacking]
 ---
 
 ## Cryptojackingとは
