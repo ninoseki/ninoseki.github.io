@@ -24,7 +24,7 @@ Enisaが[Cryptojackingに関するレポート](https://www.enisa.europa.eu/publ
 ## 調査結果
 {% gist 489679750f27fe7fe7c25fb46e84d478 %}
 
-## まとめ 
+## まとめ
 
 * 日本を含め、アジア諸国のCoinhive使用率(中国: 18件、台湾: 14件、韓国: 2件)は欧州に比べて低い模様
   * Censysで`coinhive.min.js`で検索した結果の国別TOP5:
@@ -37,11 +37,10 @@ Enisaが[Cryptojackingに関するレポート](https://www.enisa.europa.eu/publ
 * ユーザーの事前同意を得てからマイニングが開始される`authedmine.min.js`の採用はゼロ。
 * 中にはスレッド数 = 10でマイニングを行うアグレッシブなサイト(`drarama[.]site`)もあり、注意が必要
   * スレッド数の設定を明示しない場合、Coinhiveはスレッド数 = CPUのコア数で動作
-
-**`drarama[.]site`の閲覧時のCPU使用率**
-![1](https://user-images.githubusercontent.com/291028/32712866-05509844-c88a-11e7-9885-80b3a739d570.png)
-**`drarama[.]site`のCoinhive設定**
-![2](https://user-images.githubusercontent.com/291028/32712871-0bc9f47c-c88a-11e7-85d2-a083013f0352.png)
+  * `drarama[.]site`の閲覧時のCPU使用率
+ ![1](https://user-images.githubusercontent.com/291028/32712866-05509844-c88a-11e7-9885-80b3a739d570.png)
+  * `drarama[.]site`のCoinhive設定
+ ![2](https://user-images.githubusercontent.com/291028/32712871-0bc9f47c-c88a-11e7-85d2-a083013f0352.png)
 
 ## 参考資料
 * [Cryptojacking - Cryptomining in the browser](https://www.enisa.europa.eu/publications/info-notes/cryptojacking-cryptomining-in-the-browser)

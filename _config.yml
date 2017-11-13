@@ -184,15 +184,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
-
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
+  - jekyll-remote-theme
 
 # Archives
 #  Type
@@ -248,4 +240,4 @@ defaults:
       share: true
       related: true
 
-theme: jekyll-theme-minimal
+remote_theme: "mmistakes/minimal-mistakes"
