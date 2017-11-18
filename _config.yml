@@ -28,22 +28,6 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
-staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "master"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
-  requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   path                   : # blank (default) uses feed.xml
 
@@ -73,7 +57,6 @@ analytics:
   provider               : "google" # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          : "UA-26296840-4"
-
 
 # Site Author
 author:
@@ -105,7 +88,6 @@ author:
   weibo            :
   xing             :
   youtube          : # "https://youtube.com/c/MichaelRoseDesign"
-
 
 # Reading Files
 include:
@@ -143,14 +125,12 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -163,12 +143,10 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
 
 # Outputting
 permalink: /:categories/:title/
@@ -176,14 +154,8 @@ paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-
 # Plugins
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
   - jekyll-remote-theme
 
 # Archives

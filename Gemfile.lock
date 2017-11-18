@@ -220,13 +220,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-feed
-  jekyll-gist
-  jekyll-mentions
-  jekyll-paginate
   jekyll-remote-theme
-  jekyll-sitemap
-  jemoji
 
 BUNDLED WITH
    1.16.0
