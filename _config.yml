@@ -156,7 +156,9 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins
 plugins:
+  - jekyll-mentions
   - jekyll-remote-theme
+  - jekyll-sitemap
 
 # Archives
 #  Type
