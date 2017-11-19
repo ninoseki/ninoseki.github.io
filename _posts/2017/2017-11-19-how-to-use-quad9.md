@@ -72,13 +72,13 @@ Address:	9.9.9.9#53
 
 * `警告！今はをチェックしてください.zip`(SHA256: `1583f7e210ab76d429e59b2a8d5e362674028c112532041873e88fcfb979c479`)
   * [VirutsTotal](https://www.virustotal.com/#/file/1583f7e210ab76d429e59b2a8d5e362674028c112532041873e88fcfb979c479/)
-* `セキュリティ情報.docx`'(SHA256: `535343c0decc93cbec65542a5a651df03d02e28622ab0802446b5ea580477d1d`)
-  * [VirusTotal](https://www.virustotal.com/#/file/1583f7e210ab76d429e59b2a8d5e362674028c112532041873e88fcfb979c479)
+* `セキュリティ情報.docx`(SHA256: `535343c0decc93cbec65542a5a651df03d02e28622ab0802446b5ea580477d1d`)
+  * [VirusTotal](https://www.virustotal.com/#/file/535343c0decc93cbec65542a5a651df03d02e28622ab0802446b5ea580477d1d/)
   * [Hybrid Analysis](https://www.hybrid-analysis.com/sample/535343c0decc93cbec65542a5a651df03d02e28622ab0802446b5ea580477d1d)
-* `doc.bin`('SHA256: `5479746c9f658c99865ea1d0fb605c769f7a8e0b1ef64ae74aa08f66e88063eb`)
-  * [VirusTotal](https://www.virustotal.com/#/file/5479746c9f658c99865ea1d0fb605c769f7a8e0b1ef64ae74aa08f66e88063eb/)
-  * [Hybrid Analysis](https://www.hybrid-analysis.com/sample/5479746c9f658c99865ea1d0fb605c769f7a8e0b1ef64ae74aa08f66e88063eb)
 * 通信先URL: `http://eu.kihealthandfitness[.]com/doc.bin?syif`
+  * Ursnif本体: `doc.bin`(SHA256: `5479746c9f658c99865ea1d0fb605c769f7a8e0b1ef64ae74aa08f66e88063eb`)
+    * [VirusTotal](https://www.virustotal.com/#/file/5479746c9f658c99865ea1d0fb605c769f7a8e0b1ef64ae74aa08f66e88063eb/)
+    * [Hybrid Analysis](https://www.hybrid-analysis.com/sample/5479746c9f658c99865ea1d0fb605c769f7a8e0b1ef64ae74aa08f66e88063eb)
 
 ```sh
 % nslookup eu.kihealthandfitness.com
