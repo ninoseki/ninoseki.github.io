@@ -1,7 +1,7 @@
 ---
 title: 悪性ドメインの名前解決をブロックするパブリックDNS Quad9を使ってみた
 excerpt: 悪性ドメインの名前解決をブロックするパブリックDNS Quad9を使ってみた
-tags: [security dns]
+tags: [security, dns]
 ---
 
 ## 概要
