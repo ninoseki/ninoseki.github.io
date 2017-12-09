@@ -1,6 +1,6 @@
 ---
 title: My Favorite Discs 2017
-excerpt: My Favorite Discs 2017
+excerpt: 2017年に聴いてよかったアルバム
 ---
 
 すっかり年の瀬気分になったので、今年聴いて良かったアルバムをまとめておきます。
