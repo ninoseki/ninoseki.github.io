@@ -23,6 +23,7 @@ excerpt: 2017年版CSIRT/情報セキュリティ担当者が読んでおいた�
   - セキュリティ対応組織において求められる共通的な機能や役割をまとめた資料
   - 補足文献:
     - [セキュリティ対応組織力向上セミナー](http://www.ntt.com/content/dam/nttcom/hq/jp/business/go-event/pdf/presentation/1-10.pdf)
+- JNSA: [セキュリティ知識分野（SecBoK）人材スキルマップ2017年版](http://www.jnsa.org/result/2017/skillmap/index.html) (2017/08/21)
 - IPA: [企業のCISOやCSIRTに関する実態調査2017](https://www.ipa.go.jp/files/000058850.pdf) (2017/04/13)
   - 企業経営者の情報セキュリティに対する認識や姿勢と、情報セキュリティ対策の取り組み状況を調査した資料
 - NRI: [企業における情報セキュリティ実態調査 2017](http://www.nri.com/jp/event/mediaforum/2017/pdf/forum251.pdf) (2017/03/28)
@@ -41,6 +42,7 @@ excerpt: 2017年版CSIRT/情報セキュリティ担当者が読んでおいた�
   - 参考文献:
     - LAC: [OWASP Top 10 - 2017 rc1が公開されました](https://www.lac.co.jp/lacwatch/people/20170424_001276.html)
 - デジタル・フォレンジック研究会: [証拠保全ガイドライン第６版](https://digitalforensic.jp/wp-content/uploads/2017/05/idf-guideline-6-20170509.pdf) (2017/05/09)
+- ISOG-J: [セキュリティ対応組織 (SOC,CSIRT)強化に向けたサイバーセキュリティ情報共有の「5W1H」 v1.0](http://isog-j.org/output/2017/5W1H-Cyber_Threat_Information_Sharing_v1.0.pdf) (2017/10/27)
 
 ## 訓練・トレーニング
 
