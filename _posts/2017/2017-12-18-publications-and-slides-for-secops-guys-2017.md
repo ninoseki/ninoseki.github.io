@@ -26,6 +26,7 @@ excerpt: 2017年版CSIRT/情報セキュリティ担当者が読んでおいた�
 - IPA: [企業のCISOやCSIRTに関する実態調査2017](https://www.ipa.go.jp/files/000058850.pdf) (2017/04/13)
   - 企業経営者の情報セキュリティに対する認識や姿勢と、情報セキュリティ対策の取り組み状況を調査した資料
 - NRI: [企業における情報セキュリティ実態調査 2017](http://www.nri.com/jp/event/mediaforum/2017/pdf/forum251.pdf) (2017/03/28)
+  - 国内の大手・有力企業における情報セキュリティに対する取り組み状況をまとめた資料
   - 補足文献:
     - [実態調査からひも解く、これからの情報セキュリティ対策のあり方](http://www.nisc.go.jp/conference/cs/jinzai/wg2/dai02/pdf/02shiryou0201.pdf)
 - ENISA: [CSIRT関連Publications 2017](https://www.enisa.europa.eu/publications#c5=2017&c5=2017&c5=false&c2=publicationDate&reversed=on&b_start=0&c8=Cyber+Security&c8=CSIRTs&c8=Incident+Reporting&c8=Threat+Intelligence&c8=Standards&c8=Threat+landscape&c8=Crisis+Management)
@@ -39,6 +40,7 @@ excerpt: 2017年版CSIRT/情報セキュリティ担当者が読んでおいた�
 - OWASP: [OWASP TOP 10 2017](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf) (2017/11/21)
   - 参考文献:
     - LAC: [OWASP Top 10 - 2017 rc1が公開されました](https://www.lac.co.jp/lacwatch/people/20170424_001276.html)
+- デジタル・フォレンジック研究会: [証拠保全ガイドライン第６版](https://digitalforensic.jp/wp-content/uploads/2017/05/idf-guideline-6-20170509.pdf) (2017/05/09)
 
 ## 訓練・トレーニング
 
