@@ -79,7 +79,7 @@ PDFファイルにCoinhiveが埋め込まれた事例。
 
 * `e-Receiptmen%iCLoud%purchse-stored#ID91239849.pdf`(`1cbf2cdd487e30595f22e1e1dd504201035edf816c1b7c1aee51e1a8314f8ae6`)
   * ref. [Hybrid Analysis](https://www.hybrid-analysis.com/sample/1cbf2cdd487e30595f22e1e1dd504201035edf816c1b7c1aee51e1a8314f8ae6?environmentId=100)
-  * URL短縮サービスBit.do(`https://bit.do/`)でCoinhiveを取得
+  * URL短縮サービスBit.do(`https://bit.do/`)経由でCoinhiveを取得
   * Appleからの領収書に偽装
 
 ![Imgur](https://i.imgur.com/5g6RvjC.png)
