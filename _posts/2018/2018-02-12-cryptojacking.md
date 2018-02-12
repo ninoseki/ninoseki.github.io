@@ -74,6 +74,9 @@ excerpt: 公共機関を含む4,000+のWebサイトにCoinhiveが仕込まれた
 - **改ざん後:**
   - [オリジナルver.](https://pastebin.com/x772SUQU)
   - [難読化解除ver.](https://pastebin.com/57vPLKAH)
+  - 難読化解除ver.のキャプチャ:
+
+![Imgur](https://i.imgur.com/mrHBqVh.png)
 
 ## 対策について
 
@@ -97,9 +100,8 @@ excerpt: 公共機関を含む4,000+のWebサイトにCoinhiveが仕込まれた
 - 上記の事例も、CDN上のJavaScript改ざんにより引き起こされている
 - 上記の事例で改ざんされたJavaScriptのURLは以下の通り
   - `d2u6vujtbrga6l.cloudfront.net/js/jquery.onImagesLoad.min.js`
-    - ref. [urlscan.io](https://urlscan.io/responses/da70a208644e7bbdf8f45a4144b47360e143ecef222d899739d30f60cde49a9a/)
   - `cdn.deccanchronicle.com/js/jquery.onImagesLoad.min.js`
-    - ref. [urlscan.io](https://urlscan.io/responses/da70a208644e7bbdf8f45a4144b47360e143ecef222d899739d30f60cde49a9a/)
+  - ref. [urlscan.io](https://urlscan.io/responses/da70a208644e7bbdf8f45a4144b47360e143ecef222d899739d30f60cde49a9a/)
 - キャプチャ:
 
 ![Imgur](https://i.imgur.com/gavwTLx.png)
