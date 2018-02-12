@@ -60,18 +60,20 @@ excerpt: 公共機関を含む4,000+のWebサイトにCoinhiveが仕込まれた
 
 ## 被害にあったWebサイトの数
 
-PublicWWWの検索結果によれば、4,275件のWebサイトが被害にあった模様。
+- [PublicWWWの検索結果](https://publicwww.com/websites/browsealoud.com%2Fplus%2Fscripts%2Fba.js/)によれば、4,275件のWebサイトが被害にあった模様。
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here&#39;s a list of 4,275 sites that are most likely *all* victims: <a href="https://t.co/1wzp9meUQJ">https://t.co/1wzp9meUQJ</a><br>These sites have neglected to deploy SRI and CSP, which would have completely mitigated this attack.</p>&mdash; Scott Helme (@Scott_Helme) <a href="https://twitter.com/Scott_Helme/status/962696534453256194?ref_src=twsrc%5Etfw">February 11, 2018</a></blockquote>
 
+- キャプチャ:
 ![Imgur](https://i.imgur.com/Sm5XiNJ.jpg)
 
 ## 改ざんされたJavaScriptについて
 
-- **改ざん前(v2.5.0):** https://urlscan.io/responses/38527c93e446580d52617083d72ebea68b5b5f417ee3a2e9b02919d603a1e8ac/
+- **改ざん前(v2.5.0):**
+  - ref. [urlscan.io](https://urlscan.io/responses/38527c93e446580d52617083d72ebea68b5b5f417ee3a2e9b02919d603a1e8ac/)
 - **改ざん後:**
-  - オリジナル: https://pastebin.com/x772SUQU
-  - 難読化解除版: https://pastebin.com/57vPLKAH
+  - [オリジナルver.](https://pastebin.com/x772SUQU)
+  - [難読化解除ver.](https://pastebin.com/57vPLKAH)
 
 ## 対策について
 
@@ -88,6 +90,18 @@ PublicWWWの検索結果によれば、4,275件のWebサイトが被害にあっ
 - 本件で使用されていたCoinhiveのSiteKeyは`1GdQGpY1pivrGlVHSp5P2IIr9cyTzzXq`
 - このSiteKeyは別の事例でも観測されている
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hey <a href="https://twitter.com/DeccanChronicle?ref_src=twsrc%5Etfw">@DeccanChronicle</a>, and <a href="https://twitter.com/TheAsianAgeNews?ref_src=twsrc%5Etfw">@TheAsianAgeNews</a>! Your pages are loading <a href="https://twitter.com/hashtag/Coinhive?src=hash&amp;ref_src=twsrc%5Etfw">#Coinhive</a> <a href="https://twitter.com/hashtag/cryptomining?src=hash&amp;ref_src=twsrc%5Etfw">#cryptomining</a> Javascript. <br><br>Unsuspecting users visiting these pages may face unexpected CPU usage spikes, and browsers may hang. <a href="https://t.co/BzbodPYcyK">pic.twitter.com/BzbodPYcyK</a></p>&mdash; Banbreach (@Banbreach) <a href="https://twitter.com/Banbreach/status/960199133016612865?ref_src=twsrc%5Etfw">February 4, 2018</a></blockquote>
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The <a href="https://twitter.com/hashtag/Coinhive?src=hash&amp;ref_src=twsrc%5Etfw">#Coinhive</a> script was briefly up, again, and gone now. This is getting very, very interesting.  <a href="https://twitter.com/fs0c131y?ref_src=twsrc%5Etfw">@fs0c131y</a> <a href="https://twitter.com/refsrc?ref_src=twsrc%5Etfw">@refsrc</a> What would you advise users? <a href="https://t.co/q1rES9fGBV">pic.twitter.com/q1rES9fGBV</a></p>&mdash; Banbreach (@Banbreach) <a href="https://twitter.com/Banbreach/status/960470919763423234?ref_src=twsrc%5Etfw">February 5, 2018</a></blockquote>
+
+- 上記の事例も、CDN上のJavaScript改ざんにより引き起こされている
+- 上記の事例で改ざんされたJavaScriptのURLは以下の通り
+  - `d2u6vujtbrga6l.cloudfront.net/js/jquery.onImagesLoad.min.js`
+    - ref. [urlscan.io](https://urlscan.io/responses/da70a208644e7bbdf8f45a4144b47360e143ecef222d899739d30f60cde49a9a/)
+  - `cdn.deccanchronicle.com/js/jquery.onImagesLoad.min.js`
+    - ref. [urlscan.io](https://urlscan.io/responses/da70a208644e7bbdf8f45a4144b47360e143ecef222d899739d30f60cde49a9a/)
+- キャプチャ:
+
+![Imgur](https://i.imgur.com/gavwTLx.png)
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
