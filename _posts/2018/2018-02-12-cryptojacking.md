@@ -51,12 +51,34 @@ excerpt: 公共機関を含む4,000+のWebサイトにCoinhiveが仕込まれた
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We have issued an alert to the subscribers of our alerting system regarding reports of the cryptomining malware due to the BrowseAloud plugin <a href="https://t.co/62FT8V0FqN">https://t.co/62FT8V0FqN</a></p>&mdash; IRISS (@irisscert) <a href="https://twitter.com/irisscert/status/962832337158451201?ref_src=twsrc%5Etfw">February 11, 2018</a></blockquote>
 
+- **3:12 AM - 13 Feb 2018:**
+  - @ncscが本件に関するガイドラインを発表
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Guidance for members of the public, website administrators and JavaScript developers following the recently publicised cryptocurrency mining compromises of several websites <a href="https://t.co/5vS86Xyif7">https://t.co/5vS86Xyif7</a></p>&mdash; NCSC UK (@ncsc) <a href="https://twitter.com/ncsc/status/963113501760901121?ref_src=twsrc%5Etfw">February 12, 2018</a></blockquote>
+
+- **7:46 AM - 13 Feb 2018:**
+  - PCMagのリポーターである@Michael_Kanからの問合せにCoinhiveが応答
+    - 本件に関与したCoinhiveユーザーのアカウントは削除した
+    - 本件に関与したCoinhiveユーザーの収益は0.1XMR(= 24USD)であった
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Coinhive updated their statement on the Browsealoud hijacking; yes their service was involved. Ended up mining 0.1XMR ($24) <a href="https://twitter.com/bad_packets?ref_src=twsrc%5Etfw">@bad_packets</a> <a href="https://twitter.com/Scott_Helme?ref_src=twsrc%5Etfw">@Scott_Helme</a> <a href="https://t.co/ibh3NX9OPv">pic.twitter.com/ibh3NX9OPv</a></p>&mdash; Michael Kan (@Michael_Kan) <a href="https://twitter.com/Michael_Kan/status/963182433817583617?ref_src=twsrc%5Etfw">February 12, 2018</a></blockquote>
+
 ## 攻撃経路
 
 - @texthelpが提供する[Browsealoud](https://www.texthelp.com/en-gb/products/browsealoud/getstartedwithbrowsealoud/)が改ざんされたことが原因
 - BrowsealoudはWebサイトのアクセシビリティを向上させるためのソフトウェア
   - イギリスを中心に多くの公共機関のWebサイトで採用されていた模様
 - BrowsealoudのJavaScript(`www.browsealoud.com/plus/scripts/ba.js`)が改ざんされた原因については現在も調査中
+
+- @marco_covaはAmazon S3経由で改ざんされたのではないかと指摘している
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">The <a href="https://t.co/gGMeoCMAv7">https://t.co/gGMeoCMAv7</a> script has been injected since at least 11am this morning, so the attack went on for about 5 hours. <a href="https://t.co/FBoCyBCK8Q">pic.twitter.com/FBoCyBCK8Q</a></p>&mdash; Marco Cova (@marco_cova) <a href="https://twitter.com/marco_cova/status/962731649875218433?ref_src=twsrc%5Etfw">February 11, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">That FULL_CONTROL seems unwise.<br><br>&quot;We highly recommend that you never grant the All Users group WRITE, WRITE_ACP, or FULL_CONTROL permissions.&quot; <a href="https://t.co/vMYMiAF6Ce">pic.twitter.com/vMYMiAF6Ce</a></p>&mdash; Marco Cova (@marco_cova) <a href="https://twitter.com/marco_cova/status/962735563206995968?ref_src=twsrc%5Etfw">February 11, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">There&#39;s some ongoing work on the browsealoud&#39;s S3 bucket (notice the changed LastModified and Size attribute for the compromised ba.js script). <a href="https://t.co/ojLbGKjF16">pic.twitter.com/ojLbGKjF16</a></p>&mdash; Marco Cova (@marco_cova) <a href="https://twitter.com/marco_cova/status/962743448527953921?ref_src=twsrc%5Etfw">February 11, 2018</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Waiting for the incident analysis from the browsealoud folks, but at this point I&#39;d bet it was an S3 bucket compromise</p>&mdash; Marco Cova (@marco_cova) <a href="https://twitter.com/marco_cova/status/962743691491323905?ref_src=twsrc%5Etfw">February 11, 2018</a></blockquote>
 
 ## 被害にあったWebサイト
 
