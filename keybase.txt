@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/ninoseki
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ninoseki.github.io
+  * I am ninoseki (https://keybase.io/ninoseki) on keybase.
+  * I have a public key with fingerprint 6721 C856 CC6B DAA7 69E6  17C1 DCB8 5CA3 AB29 48E8
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101048a3723e8a8341a98e72ecef3aa47dd5e5ea1d8d84347d6c1e54bf6673f83bb0a",
+      "fingerprint": "6721c856cc6bdaa769e617c1dcb85ca3ab2948e8",
+      "host": "keybase.io",
+      "key_id": "dcb85ca3ab2948e8",
+      "kid": "0101048a3723e8a8341a98e72ecef3aa47dd5e5ea1d8d84347d6c1e54bf6673f83bb0a",
+      "uid": "470da95062ab409dbf1b31c3dea07019",
+      "username": "ninoseki"
+    },
+    "service": {
+      "hostname": "ninoseki.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1527238383,
+  "expire_in": 157680000,
+  "prev": "95141e07014ce30a062ca60105e9f4f1e8ef1aacf74dcfb90e7a3d1cb7102598",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.77
+Comment: https://keybase.io/crypto
+
+yMIhAnicrVJdSBRRFF7LskTFggKjLKY/TZO5O/+rEJVRT5GoYWZsd+49sw7rzmw7
+418mUmGJ4l8JmYSwBEUPYSZF9J9WWGYUFWQahE8VUU9FPUTdsXqJHrvn4XLO/b7v
+nu9w7qbO9iUn5B49XPzsulGYMHanv9q3O+nxpwZOt2k9F2jgwjBzQRUFxw2GTcoF
+OB6xEFUsKH4BVKwKIsKaCoofCBgCxqJCqQQSYERVqooCy2WCQBJ1Q5YVwVAFXecx
+l8sZphWCWDRmWi6TlRU/IqokEyLrFGNF1kBGCkGU6KpEsIB1vyaqoDJipe14DNac
+jh3IM21WY0lwpr1/4P9z39UzcqLCU6xJvOzHushrVDeQLiAiUMC8wiPNAzoQs3AE
+GNoyLduBsMk15nKsWmMS8AbrOfkLkRcy3cpq/ZeraMx2bWJXsfdK1406AY/v1kc9
+Qi3owd9SQd20KJsmY9RAzDFtiwsghiSu6Wkjyc88qyxyOaiLmjEImh5CUmSVZ8f7
+B2qYpCYhEYHXvkhA4DEzR7DMxiaBZogGAhUMhDExFJESQ9d4ULBAEdEVxPslzZu1
+A/ssm2kzUReHmKZjhizsVseAaxy+XZHoS0j2zZ0zy1szX/L89D/LVxae5+sQF++P
+tvd9PP6hasHxSyfi3yfiZeGyro03i0bf5GSvriscG+WairS3t+Xh9py0yb6X6+M/
+zivTiVc3PVnS9fBM6XDB9c/vxYOR+K7DWf1KG+0Y/9ZT3tjcVDy4daiRk1YdWde7
+pGXv6yOTWwr2NC+/cH884+SB1j6uLfWTumbpums5Q9sunn0UmO6eteJVa9rCB6EI
+jmSORC/X9Xbv6Jw6V7Fzwwj3Iuc5bbmRP73pUPrTpKr0vpGB5sGAv/ZYeap0ctmV
+koyJErA2j8fPp0yter0yJZ+sPTXx0amNZQtpnV9KAwUo89aEdS7r3qKKgVs9qZlf
+gl+7I9vrN/Ap9unv73b8BIpQP44=
+=Lx6Q
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ninoseki
+
+==================================================================
