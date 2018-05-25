@@ -28,10 +28,10 @@ To do so, I am signing this object:
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1527238383,
+  "ctime": 1527238900,
   "expire_in": 157680000,
-  "prev": "95141e07014ce30a062ca60105e9f4f1e8ef1aacf74dcfb90e7a3d1cb7102598",
-  "seqno": 10,
+  "prev": "1be9fd7688c521124e14249d4c2c1e09fd78ef426a1a09ad61a136cb9b71049c",
+  "seqno": 12,
   "tag": "signature"
 }
 
@@ -41,23 +41,23 @@ which yields the signature:
 Version: Keybase OpenPGP v2.0.77
 Comment: https://keybase.io/crypto
 
-yMIhAnicrVJdSBRRFF7LskTFggKjLKY/TZO5O/+rEJVRT5GoYWZsd+49sw7rzmw7
-418mUmGJ4l8JmYSwBEUPYSZF9J9WWGYUFWQahE8VUU9FPUTdsXqJHrvn4XLO/b7v
-nu9w7qbO9iUn5B49XPzsulGYMHanv9q3O+nxpwZOt2k9F2jgwjBzQRUFxw2GTcoF
-OB6xEFUsKH4BVKwKIsKaCoofCBgCxqJCqQQSYERVqooCy2WCQBJ1Q5YVwVAFXecx
-l8sZphWCWDRmWi6TlRU/IqokEyLrFGNF1kBGCkGU6KpEsIB1vyaqoDJipe14DNac
-jh3IM21WY0lwpr1/4P9z39UzcqLCU6xJvOzHushrVDeQLiAiUMC8wiPNAzoQs3AE
-GNoyLduBsMk15nKsWmMS8AbrOfkLkRcy3cpq/ZeraMx2bWJXsfdK1406AY/v1kc9
-Qi3owd9SQd20KJsmY9RAzDFtiwsghiSu6Wkjyc88qyxyOaiLmjEImh5CUmSVZ8f7
-B2qYpCYhEYHXvkhA4DEzR7DMxiaBZogGAhUMhDExFJESQ9d4ULBAEdEVxPslzZu1
-A/ssm2kzUReHmKZjhizsVseAaxy+XZHoS0j2zZ0zy1szX/L89D/LVxae5+sQF++P
-tvd9PP6hasHxSyfi3yfiZeGyro03i0bf5GSvriscG+WairS3t+Xh9py0yb6X6+M/
-zivTiVc3PVnS9fBM6XDB9c/vxYOR+K7DWf1KG+0Y/9ZT3tjcVDy4daiRk1YdWde7
-pGXv6yOTWwr2NC+/cH884+SB1j6uLfWTumbpums5Q9sunn0UmO6eteJVa9rCB6EI
-jmSORC/X9Xbv6Jw6V7Fzwwj3Iuc5bbmRP73pUPrTpKr0vpGB5sGAv/ZYeap0ctmV
-koyJErA2j8fPp0yter0yJZ+sPTXx0amNZQtpnV9KAwUo89aEdS7r3qKKgVs9qZlf
-gl+7I9vrN/Ap9unv73b8BIpQP44=
-=Lx6Q
+yMIlAnicrVJbSBRRGF7NkjaDwAcrusBUD6Usc+Z6xjSzC5V0ASPQCtdzzpxdx8vM
+tjOr2eZLaxgFlT0URBolIkhaZNgFhRSzh3wo7EKkXaxwocuDSZDh1hmrl+gxzsPh
+//7v+/i/n39g/iyPNymrIbZ7uCewKelBX3PEsy/14WSUw5Zey2VHuQo689FKndqO
+v8LQuWyOB+xJEImqIFKIoCgBpEGqCpTQgIiQpOq6TGWKgA51KImsVgigsoQDiqKK
+AShizCMuiwsYZpCGQ2HDdJitogqAQFkhRME6QqqiUQWoBOgEQ5kgEWFBkyCFTFhm
+2a6CDYeRTX2GxTBW+GfG+wf/P88dmbGTVF5HmswrAsISr+k4ALAIiKhTxKs80Fyi
+TcMmqqKMbRqmZdMKg6vL4hhabRDqLtZN8hfDFzScsgj+lSoUthyLWJWsX+Y4ITvb
+1Tu1IVdQQ7H/t5UfG6bOtskU1TRsG5bJZQPGJI7hegNZYJmhxvNZHD0YMsLUb7gM
+WVUgz7toKEyrmSXAVAvoDIVEFgAQJAokQdJ0iQhsE7zbgzQgCQoCiNeQrgAERIVg
+DatstRrh3HAHTIt5C2xOFGSethE0kRMJU66u/+7+FE+S1zNndrJ7Zh7v3AV/jm/g
+c+qPLd3nW14UxmvjrU5R1GNXFMeuL1mzY6Ddd2XkKXweM89+SRx52ZL3pnNZQXff
+sbmJYGn9mXk1KbfTl7f2NPkWPT7a2JNYnKMkNx3qyNuVGF/thScvTC/seKItHW5L
+68h53dU7HflYFTdvwW+hxOTe/MNp0a08GX0tl/vvT11s2dA19mpz6Zbg2Ym3l2Y1
+DG3cuWr4VPnURKP19UHVutYmUt+/eHnv1Udi7vF3N2JF16KTd8QCcGJ7c8mzTFhU
+JI17py4j0nDcNn3rtZJlJe0r9tTE+8em83PTM6vujawcOT24rbJs9EMheTmUW995
+IqP4e2ztaOPguU9DcT7j/c22lJ9VtE0T
+=6yqm
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
