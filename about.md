@@ -18,4 +18,7 @@ permalink: /about/
     - [ryo](https://rubygems.org/gems/ryo)
   - TypeScript
     - [ioc-extractor](https://www.npmjs.com/package/ioc-extractor)
-    - [mitaka](https://github.com/ninoseki/mitakaj)
+    - [mitaka](https://github.com/ninoseki/mitaka)
+      - [Chrome web store](https://chrome.google.com/webstore/detail/mitaka/bfjbejmeoibbdpfdbmbacmefcbannnbg)
+- Talks:
+  - [OWASP Juice Shop どうでしょう](https://speakerdeck.com/ninoseki/owasp-juice-shop-doudesiyou) @ OWASP Night 2018/7
