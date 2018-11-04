@@ -90,7 +90,7 @@ RewriteCond %{HTTP_REFERER} alltheweb\.com [NC,OR]
 RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://safebrowsing-cache.google.com/.*$ [NC]
 ```
 
-同じく　`16Shop` フィッシングキットが実際に使用してる`HTTP_USER_AGENT` による対策の一部です。
+同じく `16Shop` フィッシングキットが実際に使用してる`HTTP_USER_AGENT` による対策の一部です。
 
 ```
 RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
@@ -237,6 +237,6 @@ document.write(output)</script></head></html>";
 ob_start("encrypt");
 ```
 
-ヘッドレスブラウザに対してはこのような難読化は無意味ですが、Censys 等の検索エンジンはヘッドレスブラウザのように JS を解釈する機能を持たないため、有効な対策となりえます。
+ヘッドレスブラウザに対してはこのような暗号化は無意味ですが、Censys 等の検索エンジンはヘッドレスブラウザのように JS を解釈する機能を持たないため、有効な対策となりえます。
 
 以上です。
