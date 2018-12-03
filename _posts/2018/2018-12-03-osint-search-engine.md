@@ -231,7 +231,7 @@ Shodan / Censys と同じようなポートスキャンに加え、
 
 といった機能を備えています。
 
-例えば、opndir(ディレクトリリスティングが有効になっている)かつ日本に存在するホストを検索するためのクエリーは [category:datascan tag:opendir country:JP](https://www.onyphe.io/search/?query=category%3Adatascan+tag%3Aopendir+country%3AJP) となります。
+例えば、opendir(ディレクトリリスティングが有効になっている)かつ日本に存在するホストを検索するためのクエリーは [category:datascan tag:opendir country:JP](https://www.onyphe.io/search/?query=category%3Adatascan+tag%3Aopendir+country%3AJP) となります。
 
 ![Imgur](https://i.imgur.com/ZdYnq4r.png)
 
