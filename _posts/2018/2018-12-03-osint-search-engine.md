@@ -7,8 +7,6 @@ OSINT をする際に活用することができる IoT / Dark & Deep Web / ソ�
 
 ## [Shodan](https://www.shodan.io/)
 
-### 概要
-
 Shodan は インターネット経由でアクセス可能な機器に対して、ポートスキャン及びバナー情報[^1]の取得を行なっています。
 
 Shodan は1ヶ月に1回にインターネット全体をスキャンしています。[^2]
@@ -92,9 +90,6 @@ Shodan は1ヶ月に1回にインターネット全体をスキャンしてい�
     - 今後改善される可能性あり?
 
 ## [Censys](https://censys.io/)
-
-
-### 概要
 
 Censys は IPv4, Popular Websites[^3] 及び X.509 Certificates をスキャンしており、スキャンしたデータに対する検索エンジンを提供しています。
 
