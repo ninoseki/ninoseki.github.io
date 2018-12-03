@@ -110,7 +110,7 @@ X.509 Certificate の更新頻度については明らかにされていませ�
 - [Popular Websites 用フィルター](https://gist.github.com/ninoseki/825444be096155b818c67867cd69fbf8)
 - [X.509 Certificates 用フィルター](https://gist.github.com/ninoseki/7c2df1d803ec11ce342c9f4ee26c7838)
 
-例えば、Coinhive　を使用しており、かつ日本に存在するホストを検索する場合の検索クエリーは ["coinhive.min.js" AND location.country_code: JP](https://censys.io/ipv4?q=%22coinhive.min.js%22+AND+location.country_code%3A+JP)　となります。
+例えば、Coinhive を使用しており、かつ日本に存在するホストを検索する場合の検索クエリーは ["coinhive.min.js" AND location.country_code: JP](https://censys.io/ipv4?q=%22coinhive.min.js%22+AND+location.country_code%3A+JP) となります。
 
 ![Imgur](https://i.imgur.com/tmPIQJK.png)
 
@@ -136,20 +136,20 @@ ZoomEye がサポートしているフィンガープリントの一覧は[こ�
 
 **Host Search フィルター**
 
-| filter   | desc.                                  |
-|----------|----------------------------------------|
-| app      | application\software\product and etc.) |
-| ver      | versions                               |
-| device   | device type                            |
-| os       | operating system                       |
-| service  | service                                |
-| ip       | ip address                             |
-| cidr     | CIDR Address prefix                    |
-| hostname | hostname                               |
-| port     | port number                            |
-| city     | city name                              |
-| country  | country name                           |
-| asn      | asn number                             |
+| filter   | desc.                                 |
+|----------|---------------------------------------|
+| app      | application\software\product and etc. |
+| ver      | versions                              |
+| device   | device type                           |
+| os       | operating system                      |
+| service  | service                               |
+| ip       | ip address                            |
+| cidr     | CIDR Address prefix                   |
+| hostname | hostname                              |
+| port     | port number                           |
+| city     | city name                             |
+| country  | country name                          |
+| asn      | asn number                            |
 
 **Web Search フィルター**
 
@@ -207,7 +207,7 @@ FOFA は "cyberspace search engine" を標榜する検索エンジンです。
 - after
 - before
 
-例えば、Censys と同様の Coinhive　を使用しており、かつ日本に存在するホストを検索する場合の検索クエリーは [body="coinhive.min.js" && country="JP"](https://fofa.so/result?qbase64=Ym9keT0iY29pbmhpdmUubWluLmpzIiAmJiBjb3VudHJ5PSJKUCI%3D) となります。
+例えば、Censys と同様に Coinhive を使用しており、かつ日本に存在するホストを検索する場合の検索クエリーは [body="coinhive.min.js" && country="JP"](https://fofa.so/result?qbase64=Ym9keT0iY29pbmhpdmUubWluLmpzIiAmJiBjb3VudHJ5PSJKUCI%3D) となります。
 
 ![Imgur](https://i.imgur.com/Glss6GA.png)
 
@@ -254,7 +254,7 @@ Web サイトが持つ HTML, JS と CSS のソースコードに対して検索�
 
 site(TLD によるフィルター)と filetype フィルターを使用することができます。
 
-例えば、Coinhive　を使用しており、かつ TLD が　`.jp` な Web サイトを検索するためのクエリーは ["coinhive.min.js" site:jp](https://publicwww.com/websites/%22coinhive.min.js%22+site%3Ajp/) となります。
+例えば、Coinhive を使用しており、かつ TLD が `.jp` な Web サイトを検索するためのクエリーは ["coinhive.min.js" site:jp](https://publicwww.com/websites/%22coinhive.min.js%22+site%3Ajp/) となります。
 
 ![Imgur](https://i.imgur.com/SLJlW9S.png)
 
