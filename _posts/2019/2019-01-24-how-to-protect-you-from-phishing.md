@@ -37,7 +37,7 @@ title: ゼロからはじめるフィッシング対策 🎣
 一方、[WhoisDS](https://whoisds.com/), [WebAnalyzer](https://wa-com.com/) や [DnPedia](https://dnpedia.com/) など、無償で新規に登録されたドメイン名を提供しているサービスもあります。
 この中でも、DnPeida は検索用のインターフェースを持っており、簡便に扱うことができます。
 
-例えば、DnPedia の[Domain Search](https://dnpedia.com/tlds/search.php) で `yahoo` で検索してみるとこのような結果になりました。
+例えば、DnPedia の[Domain Search](https://dnpedia.com/tlds/search.php) にて `yahoo` で検索してみるとこのような結果になりました。
 
 ![Imgur](https://i.imgur.com/YGZzlql.png)
 
@@ -73,7 +73,7 @@ title: ゼロからはじめるフィッシング対策 🎣
 
 ![Imgur](https://i.imgur.com/PfsD8Qt.png)
 
-スクリーンショットや HTML、入力フォームなどを確認することで、 Yahoo! Japan のID・パスワードおよびクレジットカード情報を盗み取ろうとするフィッシングサイトだと確認できました。
+スクリーンショットや HTML、入力フォームなどを確認することで、 Yahoo! Japan のID・パスワードおよびクレジットカード情報を盗み取ろうとするフィッシングサイトだと確認することできました。
 
 ### 2.1 Web サイトモニタリング
 
