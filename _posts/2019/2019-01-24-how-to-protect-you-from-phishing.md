@@ -26,18 +26,22 @@ title: ゼロからはじめるフィッシング対策 🎣
 ### 備考
 
 - フィッシングサイトを見つける方法として、今回紹介する方法の他に [OpenPhish](https://openphish.com/) や [PhishTank](https://www.phishtank.com/) のフィードをモニタリングする方法や [Certificate Transparency](https://www.certificate-transparency.org/) ログサーバーをモニタリングする方法がありますが、今回は割愛します。
+  - 参考:
+    - [Facebook: Detecting phishing domains using Certificate Transparency](https://www.facebook.com/notes/protect-the-graph/detecting-phishing-domains-using-certificate-transparency/2037453483161459/)
 - 最近のフィッシングの手口として、ドメインを取得せず、短縮 URL サービスを使用してフィッシングサイトへ誘導するものがあります。いわゆる smishing でよく使用されています。これについては、今回紹介する手法では発見することはできません。
 
 ## 1. 新しく登録されたドメイン名を見つける
 
-[DomainTools](https://www.domaintools.com/) や [SecurityTrails](https://securitytrails.com/) など、新規に登録されたドメイン名を有償サービスとして提供しているところがあります。
+[DomainTools](https://www.domaintools.com/) や [SecurityTrails](https://securitytrails.com/) など、新規に登録されたドメイン名を有償で提供しているサービスがあります。
 
-一方、[WhoisDS](https://whoisds.com/), [WebAnalyzer](https://wa-com.com/) や [DnPedia](https://dnpedia.com/) など、無償で新規に登録されたドメイン名を提供しているものもあります。
-
+一方、[WhoisDS](https://whoisds.com/), [WebAnalyzer](https://wa-com.com/) や [DnPedia](https://dnpedia.com/) など、無償で新規に登録されたドメイン名を提供しているサービスもあります。
 この中でも、DnPeida は検索用のインターフェースを持っており、簡便に扱うことができます。
 
-![Imgur](https://i.imgur.com/kIvuDei.png)
+例えば、DnPedia の[Domain Search](https://dnpedia.com/tlds/search.php) で `yahoo` で検索してみるとこのような結果になりました。
 
+![Imgur](https://i.imgur.com/YGZzlql.png)
+
+ぱっと見たところ、`yahoo-protect[.]info` や `yahoo-maintain[.]com` が怪しいですね。
 
 ## 2. フィッシングサイトか確認する
 
@@ -49,7 +53,7 @@ title: ゼロからはじめるフィッシング対策 🎣
 
 ### 実例
 
-では Yahoo! のフィッシングサイト(yahoo-maintain[.]com)を例にどのように確認できるのか見てみましょう。
+では先ほど `yahoo` で検索した際に怪しく見えた `yahoo-maintain[.]com` を例に試してみましょう。
 
 #### CheckPhish.ai
 
@@ -69,9 +73,11 @@ title: ゼロからはじめるフィッシング対策 🎣
 
 ![Imgur](https://i.imgur.com/PfsD8Qt.png)
 
+スクリーンショットや HTML、入力フォームなどを確認することで、 Yahoo! Japan のID・パスワードおよびクレジットカード情報を盗み取ろうとするフィッシングサイトだと確認できました。
+
 ### 2.1 Web サイトモニタリング
 
-上記のフィッシングサイトの確認方法は、リアルタイムでフィッシングサイトが稼働していることが前提となっていました。
+上記のフィッシングサイトの確認方法は、リアルタイムでフィッシングサイトが稼働していることが前提となっています。
 
 しかし、ドメイン名が登録されていることは、Web サイトが稼働していること(= IP アドレスが割り当てられ Web サーバーが稼働していること)を意味しません。ドメイン名が取得されて、しばらくしてから Web サイトが稼働することは往往にしてあることです。
 
