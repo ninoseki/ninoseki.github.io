@@ -6,15 +6,17 @@ permalink: /about/
 
 - Name:
   - Manabu Niseki
-- Skills:
-  - OSINT
-  - Ruby:
-    - [rubygems](https://rubygems.org/profiles/ninoseki)
-  - TypeScript:
-    - [ioc-extractor](https://www.npmjs.com/package/ioc-extractor)
-    - [mitaka](https://github.com/ninoseki/mitaka)
-- Talks:
-  - [OWASP Juice Shop どうでしょう](https://speakerdeck.com/ninoseki/owasp-juice-shop-doudesiyou) @ OWASP Night 2018/7
-  - [HTTP(S)ハニポを作ってみた](https://speakerdeck.com/ninoseki/http-s-hanihowozuo-tutemita) @ 第5回 ハニーポッター技術交流会 2018/09
+- Email:
+  - manabu.niseki[at]gmail.com
+  - PGP: [F3FA 1E3D E161 2002 D385 F9D4 D2E4 09A7 7AD3 FE19](https://flowcrypt.com/pub/manabu.niseki@gmail.com)
+- Twitter:
+  - [@ninoseki](https://twitter.com/ninoseki)
+- GitHub:
+  - [@ninoseki](https://github.com/ninoseki)
+- Speaker Deck:
+  - [@ninoseki](https://speakerdeck.com/ninoseki/)
+- Speaking:
   - FIRST TC Bali 2018
   - Internet Week 2018
+  - REVULN'19
+  - HITCON Community 2019
