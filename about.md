@@ -6,9 +6,8 @@ permalink: /about/
 
 - Name:
   - Manabu Niseki
-- Email:
-  - manabu.niseki[at]gmail.com
-  - PGP: [F3FA 1E3D E161 2002 D385 F9D4 D2E4 09A7 7AD3 FE19](https://flowcrypt.com/pub/manabu.niseki@gmail.com)
+- Email(PGP):
+  - [F3FA 1E3D E161 2002 D385 F9D4 D2E4 09A7 7AD3 FE19](https://flowcrypt.com/pub/manabu.niseki@gmail.com)
 - Twitter:
   - [@ninoseki](https://twitter.com/ninoseki)
 - GitHub:
