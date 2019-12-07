@@ -19,3 +19,4 @@ permalink: /about/
   - Internet Week 2018
   - REVULN'19
   - HITCON Community 2019
+  - Botconf 2019
