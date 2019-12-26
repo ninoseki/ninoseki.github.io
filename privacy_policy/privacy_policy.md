@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Privacy Policy for Chrome Web Store
-permalink: /chrome-websote/privacy-policy/
+permalink: /chrome-webstore/privacy-policy/
 ---
 
 This is a privacy policy for my Chrome Web extension.
