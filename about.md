@@ -21,3 +21,4 @@ permalink: /about/
   - [HITCON Community 2019](https://hitcon.org/2019/CMT/slide-files/d2_s1_r1.pdf)
   - [Botconf 2019](https://www.botconf.eu/wp-content/uploads/2019/12/B2019-Ishimaru-Niseki-Ogawa-Mantis.pdf)
   - [JSAC 2020](https://drive.google.com/file/d/1BEyYtTUJeeEG436TPYh3Ur66WorIlYjw/view)
+  - Objective by the Sea v3.0
