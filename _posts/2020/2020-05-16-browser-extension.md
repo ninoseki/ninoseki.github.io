@@ -63,7 +63,7 @@ Mozilla Add-ons doesn't demand a privacy policy and a human review. Mozilla Add-
 
 ![](https://i.imgur.com/3VdzXUs.png)
 
-## Note#2. Chrome Web Store's rejection policy is uncler
+## Note#2. Chrome Web Store's rejection policy is unclear
 
 I've got removal notifications from Chrome Web Store several times because of "Spam and Placement in the Store".
 
