@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - lts/*
+install:
+  - npm install
+script:
+  - npm run docs:build
+deploy:
+  provider: pages
+  local_dir: docs/.vuepress/dist
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
