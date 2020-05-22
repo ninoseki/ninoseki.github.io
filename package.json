@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -15,10 +16,6 @@
   },
   "author": "ninoseki",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ninoseki/ninoseki.github.io/issues"
-  },
-  "homepage": "https://github.com/ninoseki/ninoseki.github.io#readme",
   "devDependencies": {
     "@limdongjin/vuepress-plugin-simple-seo": "^1.0.4-alpha.5",
     "@vuepress/plugin-blog": "^1.9.2",
