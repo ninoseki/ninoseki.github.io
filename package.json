@@ -18,9 +18,12 @@
   "license": "MIT",
   "devDependencies": {
     "@limdongjin/vuepress-plugin-simple-seo": "^1.0.4-alpha.5",
+    "@vuepress/plugin-active-header-links": "^1.5.0",
+    "@vuepress/plugin-back-to-top": "^1.5.0",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-google-analytics": "^1.5.0",
     "@vuepress/theme-blog": "^2.2.0",
+    "esm": "^3.2.25",
     "typescript": "^3.9.3",
     "vuepress": "^1.5.0",
     "vuepress-plugin-reading-time": "^0.1.1",

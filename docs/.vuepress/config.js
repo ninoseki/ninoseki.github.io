@@ -9,6 +9,8 @@ module.exports = {
     ],
   },
   plugins: [
+    "@vuepress/active-header-links",
+    "@vuepress/back-to-top",
     "vuepress-plugin-reading-time",
     "vuepress-plugin-smooth-scroll",
     "vuepress-plugin-typescript",
