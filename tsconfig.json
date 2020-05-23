@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "experimentalDecorators": true,
+    "types": ["vuepress-types"]
+  },
+  "include": ["docs/.vuepress/**/*.ts", "docs/.vuepress/**/*.vue"]
+}

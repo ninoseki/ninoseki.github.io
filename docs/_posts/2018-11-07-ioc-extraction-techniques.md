@@ -3,6 +3,10 @@ title: IoC 抽出のためのテクニックとツール
 date: 2018-11-07
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 ## 前提
 
 - IoC(Indicator of Compromise)とは、セキュリティインシデントに関連するインディケーターのことです。具体的には、マルウェアのハッシュ値(MD5, SHA256, sssdeep, etc.)やその通信先の IP アドレス、URL 等がこれに該当します。

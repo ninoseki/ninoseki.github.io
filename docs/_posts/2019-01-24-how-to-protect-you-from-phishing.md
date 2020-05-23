@@ -3,6 +3,10 @@ title: ゼロからはじめるフィッシング対策 🎣
 date: 2019-01-24
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 [フィッシング対策協議会](https://www.antiphishing.jp/)によれば、2018年上半期に報告されたフィッシングの件数は2017年下半期の月平均と比較して1.6倍に増加しているそうです。
 
 ![Imgur](https://i.imgur.com/P5dfL8v.png)

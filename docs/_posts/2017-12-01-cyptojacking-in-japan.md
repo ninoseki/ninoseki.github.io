@@ -3,6 +3,10 @@ title: ac.jpドメイン上のWebサイトが改ざんされてCoinhiveを埋め
 date: 2017-12-01
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 ac.jp ドメイン上の Web サイトで Coinhive が動いているのを見かけました。
 
 ![Imgur](https://i.imgur.com/IiLtdkx.png)

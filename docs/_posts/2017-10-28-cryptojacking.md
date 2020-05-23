@@ -3,6 +3,10 @@ title: Cryptojackingについてまとめてみた
 date: 2017-10-28
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 ## Cryptojackingとは
 意図せずに端末上/ブラウザ上で仮想通貨のマイニングを実行させられる攻撃のこと。
 

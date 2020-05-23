@@ -3,6 +3,10 @@ title: ポッドキャストで学ぶ InfoSec 🎧
 date: 2019-01-05
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 InfoSec 系の話題を取り扱うポッドキャストを紹介します。
 
 これもあるよ!等のコメントがあれば @ninoseki まで連絡ください。
