@@ -1,9 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "experimentalDecorators": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es2015",
     "types": ["vuepress-types"]
   },
   "include": ["docs/.vuepress/**/*.ts", "docs/.vuepress/**/*.vue"]
