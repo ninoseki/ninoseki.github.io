@@ -9,6 +9,9 @@ module.exports = {
     ],
   },
   plugins: [
+    "vuepress-plugin-reading-time",
+    "vuepress-plugin-smooth-scroll",
+    "vuepress-plugin-typescript",
     [
       "@vuepress/blog",
       {
@@ -24,8 +27,6 @@ module.exports = {
         },
       },
     ],
-    "@vuepress/last-updated",
-    "vuepress-plugin-reading-time",
     [
       "@vuepress/google-analytics",
       {

@@ -3,6 +3,10 @@ title: Random notes and tips about developing a browser extension
 date: 2020-05-16
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 I'm developing a browser extension which is released on Chrome Web Store and Mozilla Add-ons. It has 2,000+ active users and somewhat good reputations.
 
 - [https://github.com/ninoseki/mitaka](https://github.com/ninoseki/mitaka)
@@ -52,11 +56,12 @@ Writing tests for background & content scripts is hard. Especially mocking APIs 
 Publishing an extension is not easy. Especially publishing an extension on Chrome Web Store is difficult.
 
 In Chrome Web Store:
+
 - You should write a [privacy policy](https://developer.chrome.com/webstore/terms#use) to publish an extension.
 - You should write justifications if you use potentially dangerous APIs and permissions.
-![](https://i.imgur.com/z0EWN1v.png)
+  ![](https://i.imgur.com/z0EWN1v.png)
 - The submission to Chrome Web Store requires a human review and it takes time.
-![](https://i.imgur.com/gOfFQx8.png)
+  ![](https://i.imgur.com/gOfFQx8.png)
 
 In contrast, Mozilla Add-ons doesn't have a strict policy like Chrome Web Store has.
 

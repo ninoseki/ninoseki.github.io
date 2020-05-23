@@ -3,6 +3,10 @@ title: OSINT 用検索エンジンあれこれ
 date: 2018-12-03
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 OSINT をする際に活用することができる IoT / Dark & Deep Web / ソースコード検索エンジンについて紹介します。
 
 ## [Shodan](https://www.shodan.io/)

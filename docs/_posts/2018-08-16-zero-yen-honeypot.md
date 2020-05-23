@@ -3,6 +3,10 @@ title: ゼロ円から始めるHTTP(S)ハニーポット
 date: 2018-08-16
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 ## TL;DR
 
 - Honeypot: [Sleep Warm](https://github.com/ninoseki/sleep_warm)

@@ -3,6 +3,10 @@ title: Head First MISP - MISP入門 -
 date: 2018-09-15
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 ## はじめに
 
 これは[MISP(Malware Information Sharing Platform)](http://www.misp-project.org/)の基本的な概念と操作をまとめた入門記事です。

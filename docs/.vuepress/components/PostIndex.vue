@@ -14,20 +14,22 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    posts() {
-      // Order by publish date, desc
-      return this.$site.pages
-        .filter((item) => item.id === "post")
-        .sort((a, b) => {
-          return (
-            new Date(b.frontmatter.date || b.lastUpdated) -
-            new Date(a.frontmatter.date || a.lastUpdated)
-          );
-        });
-    },
-  },
-};
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+
+@Component
+export default class PostIndex extends Vue {
+  get posts() {
+    return this.$site.pages
+      .filter((item) => item.regularPath.startsWith("/_posts/") === true)
+      .sort((a, b) => {
+        if (a.regularPath < b.regularPath) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+  }
+}
 </script>

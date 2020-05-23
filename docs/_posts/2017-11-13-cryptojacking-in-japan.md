@@ -3,6 +3,10 @@ title: Censysで日本国内におけるCoinhiveの使用状況を調べてみ�
 date: 2017-11-13
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 Enisa が[Cryptojacking に関するレポート](https://www.enisa.europa.eu/publications/info-notes/cryptojacking-cryptomining-in-the-browser)を出すなど、Cryptojacking はますます流行ってきているようです。
 
 今回は[Censys](https://www.censys.io/)を使用して、Cryptojacking の代表格とも言える Coinhive が日本国内でどの程度使われているのか調査してみました。

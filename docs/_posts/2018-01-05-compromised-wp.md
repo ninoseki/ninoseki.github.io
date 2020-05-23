@@ -3,6 +3,10 @@ title: WordPress改ざん事例(管理者権限の奪取 & フィッシング & 
 date: 2018-01-05
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 * [Javascript Injection Creates Rogue WordPress Admin User](https://blog.sucuri.net/2017/12/javascript-injection-creates-rogue-wordpress-admin-user.html)
 
 先月中旬にSucuriがレポートしたもの(上記の記事を参照のこと)と同様のWordPressの改ざん事例を日本国内でも数件確認しました。

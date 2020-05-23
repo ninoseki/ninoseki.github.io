@@ -3,6 +3,10 @@ title: PHP(CakePHP, FuelPHP, Symphony, etc.)のデバッグ機能を本番環境
 date: 2018-03-05
 ---
 
+# {{$page.title}}
+
+<span style="color: #999;">{{$page.readingTime.text}}...</span>
+
 ## 概要
 
 PHP の Web アプリ開発者は、フロントエンド側で Web アプリのデバッグをしたいという人が多いようです。

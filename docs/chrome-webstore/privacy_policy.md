@@ -4,6 +4,8 @@ title: Privacy Policy for Chrome Web Store
 permalink: /chrome-webstore/privacy-policy/
 ---
 
+# {{$page.title}}
+
 This is a privacy policy for my Chrome Web extension.
 
 - [Mitaka](https://chrome.google.com/webstore/detail/mitaka/bfjbejmeoibbdpfdbmbacmefcbannnbg)
