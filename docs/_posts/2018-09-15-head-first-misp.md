@@ -1,6 +1,7 @@
 ---
 title: Head First MISP - MISP入門 -
 date: 2018-09-15
+sidebar: auto
 ---
 
 # {{$page.title}}
