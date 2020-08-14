@@ -22,7 +22,7 @@
     "@vuepress/plugin-back-to-top": "1.5.3",
     "@vuepress/plugin-blog": "1.9.2",
     "@vuepress/plugin-google-analytics": "1.5.3",
-    "@vuepress/theme-blog": "2.3.0",
+    "@vuepress/theme-blog": "2.3.1",
     "esm": "3.2.25",
     "typescript": "3.9.7",
     "vuepress": "1.5.3",
