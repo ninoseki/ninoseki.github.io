@@ -18,14 +18,14 @@
   "license": "MIT",
   "devDependencies": {
     "@limdongjin/vuepress-plugin-simple-seo": "1.0.4",
-    "@vuepress/plugin-active-header-links": "1.5.3",
-    "@vuepress/plugin-back-to-top": "1.5.3",
+    "@vuepress/plugin-active-header-links": "1.5.4",
+    "@vuepress/plugin-back-to-top": "1.5.4",
     "@vuepress/plugin-blog": "1.9.2",
-    "@vuepress/plugin-google-analytics": "1.5.3",
+    "@vuepress/plugin-google-analytics": "1.5.4",
     "@vuepress/theme-blog": "2.3.2",
     "esm": "3.2.25",
     "typescript": "4.0.3",
-    "vuepress": "1.5.3",
+    "vuepress": "1.5.4",
     "vuepress-plugin-reading-time": "0.1.1",
     "vuepress-plugin-typescript": "0.3.0",
     "vuepress-types": "0.9.4"
