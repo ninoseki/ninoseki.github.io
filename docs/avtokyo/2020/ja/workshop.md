@@ -22,7 +22,6 @@ sidebar: auto
 Discord のチャネルに参加するだけで OK です。
 詳細は Discord サーバー上でアナウンスされます。
 
-
 ## Class requirements
 
 ### Language

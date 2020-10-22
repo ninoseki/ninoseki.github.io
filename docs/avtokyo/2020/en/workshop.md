@@ -14,7 +14,7 @@ Attendees can learn the following topics through hands-on exercises.
 - What is phishing kit?
 - What is cloaking?
 - What is obfuscation? (And how to deobfuscate obfuscated PHP code)
-- How to collect phishing kits
+- How to collect phishing kits?
 - What is YARA? (And how to use YARA)
 
 ## How to join
