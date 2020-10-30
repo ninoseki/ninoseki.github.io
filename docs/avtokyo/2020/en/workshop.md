@@ -19,8 +19,16 @@ Attendees can learn the following topics through hands-on exercises.
 
 ## How to join
 
-You just have to join a Discord channel for the workshop.
-The details will be announced on the Discord server.
+Please register to the AVTokyo Discord server.
+
+- [AVTOKYO2020 Registration](https://www.avtokyo.org/2020/registration)
+
+Then please join the following channels.
+
+- `#04_phishing_workshop_text`
+  - The channel for announcements and QA.
+- `#04_phishing_workshop_voice`
+  - The channel for the workshop itself. (Voice & screencast)
 
 ## Class requirements
 
