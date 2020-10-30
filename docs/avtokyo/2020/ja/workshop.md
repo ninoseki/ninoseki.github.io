@@ -19,8 +19,16 @@ sidebar: auto
 
 ## How to join
 
-Discord のチャネルに参加するだけで OK です。
-詳細は Discord サーバー上でアナウンスされます。
+AVTokyo の Discord サーバーに参加してください。
+
+- [AVTOKYO2020 Registration](https://www.avtokyo.org/2020/registration)
+
+その後、下記のチャンネルに参加してください。
+
+- `#04_phishing_workshop_text`
+  - アナウンス + QA用のチャンネル
+- `#04_phishing_workshop_voice`
+  - ワークショップ用のチャンネル (Voice & screencast)
 
 ## Class requirements
 
