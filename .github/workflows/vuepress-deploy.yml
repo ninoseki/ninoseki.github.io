@@ -16,5 +16,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: ninoseki/ninoseki.github.io
         TARGET_BRANCH: master
-        BUILD_SCRIPT: npm install && npm run docs:build
+        BUILD_SCRIPT: npm install -g npm@7 && npm install && npm run docs:build
         BUILD_DIR: docs/.vuepress/dist/
