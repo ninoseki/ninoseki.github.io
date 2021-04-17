@@ -17,7 +17,7 @@
   "author": "ninoseki",
   "license": "MIT",
   "devDependencies": {
-    "@limdongjin/vuepress-plugin-simple-seo": "1.0.4",
+    "@limdongjin/vuepress-plugin-simple-seo": "1.0.4-alpha.5",
     "@vuepress/plugin-active-header-links": "1.8.2",
     "@vuepress/plugin-back-to-top": "1.8.2",
     "@vuepress/plugin-blog": "1.9.4",
