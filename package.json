@@ -31,7 +31,7 @@
     "vuepress-types": "0.9.4"
   },
   "dependencies": {
-    "vue": "^2.6.12",
-    "vue-server-renderer": "^2.6.12"
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14"
   }
 }
