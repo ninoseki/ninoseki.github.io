@@ -37,3 +37,4 @@ permalink: /about/
   - [GhostDNSbusters - Tracking and Responding to a Large Scale DNS Hijacking Campaign](https://jsac.jpcert.or.jp/archive/2021/pdf/JSAC2021_101_josh-niseki_jp.pdf)
 - DEF CON 29 Recon Village
   - [Adversary Infrastructure Tracking with Mihari](/presentations/Adversary%20Infrastructure%20Tracking%20with%20Mihari.pdf)
+- HITCON 2021
