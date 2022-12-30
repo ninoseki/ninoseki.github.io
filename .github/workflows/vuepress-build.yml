@@ -1,13 +1,18 @@
 name: Build
+
 on: [pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
+
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -20,4 +25,4 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run docs:build
+        run: NODE_OPTIONS=--openssl-legacy-provider npm run docs:build
