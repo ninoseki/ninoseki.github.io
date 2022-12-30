@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: vuepress-deploy
         uses: jenkey2011/vuepress-deploy@v1.8.1
@@ -18,5 +18,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_REPO: ninoseki/ninoseki.github.io
           TARGET_BRANCH: master
-          BUILD_SCRIPT: npm install -g npm@8 && npm install && npm run docs:build
+          BUILD_SCRIPT: npm install -g npm@8 && npm install && npm run docs:build && git config --global --add safe.directory "*"
           BUILD_DIR: docs/.vuepress/dist/
