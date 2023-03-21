@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IoC 抽出のためのテクニックとツール | ninoseki.github.io</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="alternate" type="application/rss+xml" href="https://ninoseki.github.io/rss.xml" title="ninoseki.github.io RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://ninoseki.github.io/feed.atom" title="ninoseki.github.io Atom Feed">
+    <link rel="alternate" type="application/json" href="https://ninoseki.github.io/feed.json" title="ninoseki.github.io JSON Feed">
+    <meta name="description" content="(●__●)">
+    <meta name="twitter:image">
+    <meta property="og:url" content="https://ninoseki.github.io/_posts/2018-11-07-ioc-extraction-techniques.html">
+    <meta name="twitter:url" content="https://ninoseki.github.io/_posts/2018-11-07-ioc-extraction-techniques.html">
+    <meta property="og:title" content="IoC 抽出のためのテクニックとツール">
+    <meta name="twitter:title" content="IoC 抽出のためのテクニックとツール">
+    <meta itemprop="name" content="IoC 抽出のためのテクニックとツール">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:site_name" content="ninoseki.github.io">
+    
+    <link rel="preload" href="/assets/css/0.styles.0313a152.css" as="style"><link rel="preload" href="/assets/js/app.c8db5b8a.js" as="script"><link rel="preload" href="/assets/js/2.551672f8.js" as="script"><link rel="preload" href="/assets/js/18.27e8b041.js" as="script"><link rel="prefetch" href="/assets/js/10.93b31ecf.js"><link rel="prefetch" href="/assets/js/11.c7100068.js"><link rel="prefetch" href="/assets/js/12.581a6cb7.js"><link rel="prefetch" href="/assets/js/13.4a900d3a.js"><link rel="prefetch" href="/assets/js/14.35bc31c5.js"><link rel="prefetch" href="/assets/js/15.0c5932bf.js"><link rel="prefetch" href="/assets/js/16.299d6e84.js"><link rel="prefetch" href="/assets/js/17.bce521f0.js"><link rel="prefetch" href="/assets/js/19.e0c00b92.js"><link rel="prefetch" href="/assets/js/20.26e859db.js"><link rel="prefetch" href="/assets/js/21.b30f15e1.js"><link rel="prefetch" href="/assets/js/22.448af522.js"><link rel="prefetch" href="/assets/js/23.ed0bd195.js"><link rel="prefetch" href="/assets/js/24.ab2bb9e9.js"><link rel="prefetch" href="/assets/js/25.2c17fb30.js"><link rel="prefetch" href="/assets/js/26.5c975520.js"><link rel="prefetch" href="/assets/js/27.53eefe9e.js"><link rel="prefetch" href="/assets/js/28.989fe98b.js"><link rel="prefetch" href="/assets/js/29.ad8c9bc4.js"><link rel="prefetch" href="/assets/js/3.78dae79f.js"><link rel="prefetch" href="/assets/js/30.397b4d86.js"><link rel="prefetch" href="/assets/js/31.924c0225.js"><link rel="prefetch" href="/assets/js/32.13b6de82.js"><link rel="prefetch" href="/assets/js/33.27cd3ddf.js"><link rel="prefetch" href="/assets/js/34.134325a9.js"><link rel="prefetch" href="/assets/js/35.7dc97dee.js"><link rel="prefetch" href="/assets/js/4.7d7fb440.js"><link rel="prefetch" href="/assets/js/5.b3da5054.js"><link rel="prefetch" href="/assets/js/6.5cee6874.js"><link rel="prefetch" href="/assets/js/7.1f1d02f6.js"><link rel="prefetch" href="/assets/js/8.b26ffa7b.js"><link rel="prefetch" href="/assets/js/9.79bb7ce1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0313a152.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ninoseki.github.io</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="page-title"><a href="#page-title" class="header-anchor">#</a> IoC 抽出のためのテクニックとツール</h1> <p><span style="color:#999;">5 min read...</span></p> <h2 id="前提"><a href="#前提" class="header-anchor">#</a> 前提</h2> <ul><li>IoC(Indicator of Compromise)とは、セキュリティインシデントに関連するインディケーターのことです。具体的には、マルウェアのハッシュ値(MD5, SHA256, sssdeep, etc.)やその通信先の IP アドレス、URL 等がこれに該当します。</li> <li>一般的に、IoC はブラックリストへの適用や情報共有のために用いられます。</li></ul> <h2 id="ioc-抽出が必要とされる背景"><a href="#ioc-抽出が必要とされる背景" class="header-anchor">#</a> IoC 抽出が必要とされる背景</h2> <p>セキュリティベンダーから提供されるレポートの中に、IoC が含まれていることがありますが、構造化されたデータとして提供されていない場合がほとんどです。(例えば、文中にドメイン名や IP アドレスが記載されているだけ等)</p> <p>こういったレポートから、IoC を構造化されたデータとして抽出することで、ブラックリストへの適用や情報共有のためのプラットフォームへの入力がスムーズに行うことができます。</p> <p>また、IoC 抽出は&quot;Compromise&quot;なインディケーターの抽出以外にも使用できます。例えば、ログファイルからそこに含まれる IP アドレスを取り出したい、テキストファイルから URL を取り出したい、といった場合に IoC 抽出ツールを活用することができます。</p> <h2 id="ioc-抽出のテクニック"><a href="#ioc-抽出のテクニック" class="header-anchor">#</a> IoC 抽出のテクニック</h2> <h3 id="defang-と-refang"><a href="#defang-と-refang" class="header-anchor">#</a> Defang と Refang</h3> <p>IPアドレス、ドメイン、URL等の IoC は、誤ってそれらに直接通信をしてしまうリスクを避けるため、 それらの値の一部に記号を入れて無害化させる処理が一般的です。
+これを Defang と言います。</p> <ul><li>Defang の例:
+<ul><li><code>1.1.1.1</code> =&gt; <code>1.1.1[.]1</code></li> <li><code>test.com</code> =&gt; <code>test(.)com</code></li> <li><code>http://test.com</code> =&gt; <code>hxxp://test.com</code></li> <li><code>test@test.com</code> =&gt; <code>test[at]test.com</code></li></ul></li></ul> <p>逆に、これらの Defang された値を元に戻すことを Refang と言います。</p> <p>IoC を抽出するにあたっては、</p> <ul><li>Defang された状態の IoC を特定する仕組み</li> <li>Defang された状態の IoC を Refang して元に戻す仕組み</li></ul> <p>が求められます。</p> <h3 id="正規表現"><a href="#正規表現" class="header-anchor">#</a> 正規表現</h3> <p>多くの IoC 抽出ツールは、正規表現を用いて IoC を抽出します。例えば MD5, SHA1, SHA256 及び SHA512 を抽出するための正規表現は以下のようになります。</p> <div class="language-python extra-class"><pre class="language-python"><code>MD5_RE <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r&quot;(?:[^a-fA-F\d]|\b)([a-fA-F\d]{32})(?:[^a-fA-F\d]|\b)&quot;</span><span class="token punctuation">)</span>
+SHA1_RE <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r&quot;(?:[^a-fA-F\d]|\b)([a-fA-F\d]{40})(?:[^a-fA-F\d]|\b)&quot;</span><span class="token punctuation">)</span>
+SHA256_RE <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r&quot;(?:[^a-fA-F\d]|\b)([a-fA-F\d]{64})(?:[^a-fA-F\d]|\b)&quot;</span><span class="token punctuation">)</span>
+SHA512_RE <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r&quot;(?:[^a-fA-F\d]|\b)([a-fA-F\d]{128})(?:[^a-fA-F\d]|\b)&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># Source: https://github.com/InQuest/python-iocextract/blob/master/iocextract.py</span>
+</code></pre></div><p>Defang を踏まえた上で、どれだけ上手いこと正規表現を書けるか、という点が IoC 抽出ツールの差別化ポイントとなります。</p> <h2 id="代表的な-ioc-抽出ツール"><a href="#代表的な-ioc-抽出ツール" class="header-anchor">#</a> 代表的な IoC 抽出ツール</h2> <p>代表的な IoC 抽出ツールを3つ紹介します。</p> <h3 id="inquest-python-iocextract-⭐️63"><a href="#inquest-python-iocextract-⭐️63" class="header-anchor">#</a> <a href="https://github.com/InQuest/python-iocextract" target="_blank" rel="noopener noreferrer">InQuest/python-iocextract<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ⭐️63</h3> <p><a href="https://inquest.net/" target="_blank" rel="noopener noreferrer">InQuest<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> が開発している IoC 抽出ツールです。</p> <ul><li>言語: Python</li> <li>サポートする IoC のタイプ: IPv4, IPv6, Domain, URL, Email, Yara rule, MD5, SHA1, SHA256, SHA512</li></ul> <p>対応している Defang ルールの豊富さが大きな特徴です。詳しくは<a href="https://github.com/InQuest/python-iocextract#more-details" target="_blank" rel="noopener noreferrer">こちら<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を参照してください。</p> <h4 id="実行例"><a href="#実行例" class="header-anchor">#</a> 実行例</h4> <p><a href="https://gist.github.com/ninoseki/104f55329f5a80cada6a0c47e291f9d1" target="_blank" rel="noopener noreferrer">input.txt<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> を入力した場合の iocextract の出力結果を以下に示します。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> input.txt <span class="token operator">|</span> iocextract
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>jetos[.]com
+jetos[.]com
+jetos[.]com
+53[.]147/VxQG
+210[.]208/wBNh1
+jetos[.]com/qIDj
+53[.]147/VxQG
+82.221.100.52
+151.106.53.147
+151.106.53.147
+153.92.210.208
+153.92.210.208
+167.99.121.203
+151.106.53[.]147
+153.92.210[.]208
+151.106.53[.]147
+4f83c01e8f7507d23c67ab085bf79e97
+f188936d2c8423cf064d6b8160769f21
+cca227f70a64e1e7fcf5bccdc6cc25dd
+aa3f303c3319b14b4829fe2faa5999c1
+182ee99b4f0803628c30411b1faa9992
+126067d634d94c45084cbe1d9873d895
+5f45532f947501cf024d84c36e3a19a1
+fce54b4886cac5c61eda1e7605483ca3
+c1942a0ca397b627019dace26eca78d8
+126067d634d94c45084cbe1d9873d895
+f613846eb5bed227ec1a5f8df7e678d0
+50c60f37922ff2ff8733aaeaa9802da5
+c500dae1ca41236830b59f1467ee96c1
+f613846eb5bed227ec1a5f8df7e678d0
+bdc4b9f5af9868e028dd0adc10099a4e6656e9f0ad12b2e75a30f5ca0e34489d
+fb9f7fb3c709373523ff27824ed6a31d800e275ec5217d8a11024a3dffb577dd
+d3450966ceb2eba93282aace7d7684380d87c6621bbd3c4f621caa079356004a
+f12df6984bb65d18e2561bd017df29ee1cf946efa5e510802005aeee9035dd53
+bdc4b9f5af9868e028dd0adc10099a4e6656e9f0ad12b2e75a30f5ca0e34489d
+f12df6984bb65d18e2561bd017df29ee1cf946efa5e510802005aeee9035dd53
+</code></pre></div><h3 id="cmu-sei-cyobstract-⭐️28"><a href="#cmu-sei-cyobstract-⭐️28" class="header-anchor">#</a> <a href="https://github.com/cmu-sei/cyobstract" target="_blank" rel="noopener noreferrer">cmu-sei/cyobstract<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ⭐️28</h3> <p>Carnegie Mellon University の Software Engineering Institute が開発している IoC 抽出ツールです。</p> <ul><li>言語: Python</li> <li>サポートする IoC のタイプ: IPv4, IPv4 CIDR, IPv4 range, IPv6, IPv6 CIDR, IPv6 range, MD5, SHA1, SHA256, ssdeep, FQDN, email address, URL, user agent, filename, filepath, registry key, ASN, CVE, country, ISP, ASN owner, malware, attack type</li></ul> <p>cyobstract はレポートから IoC を抽出することを目的として開発されたツールで、IoC に加えてそのレポートが扱う&quot;トピック&quot;を抽出することができます。</p> <p>また、IoC 抽出用の正規表現ルール(の一部)を自動生成している点も大きな特徴です。</p> <h4 id="実行例-2"><a href="#実行例-2" class="header-anchor">#</a> 実行例</h4> <p>cyobstract には CLI インターフェースがないため、簡単なスクリプトを書きました。IoC を抽出した結果を JSON として出力するだけのものです。</p> <div class="language-py extra-class"><pre class="language-py"><code><span class="token keyword">from</span> cyobstract <span class="token keyword">import</span> extract
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> sys
+
+text <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+results <span class="token operator">=</span> extract<span class="token punctuation">.</span>extract_observables<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> input.txt <span class="token operator">|</span> python test.py <span class="token operator">|</span> jq.
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;ipv4addr&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;151.106.53.147&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;153.92.210.208&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;167.99.121.203&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;82.221.100.52&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;ipv6addr&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;ipv4range&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;ipv6range&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;ipv4cidr&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;ipv6cidr&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;asn&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;fqdn&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;eservake.jetos[.]com&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;filename&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;GUP.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;GUP.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;certutil.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cmd.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;esentutil.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;esentutl.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;libcurl.dll&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;libcurl.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;padre1.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;padre2.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;padre3.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;グテマラ大使講演会案内状.doc&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;米国接近に揺れる北朝鮮内部.doc&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;自民党海洋総合戦略小委員会が政府に提言申し入れ.doc&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;http://151.106.53[.]147/VxQG&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;http://153.92.210[.]208/wBNh1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;http://eservake.jetos[.]com/qIDj&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;md5&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;126067d634d94c45084cbe1d9873d895&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;182ee99b4f0803628c30411b1faa9992&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;4f83c01e8f7507d23c67ab085bf79e97&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;50c60f37922ff2ff8733aaeaa9802da5&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;5f45532f947501cf024d84c36e3a19a1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;aa3f303c3319b14b4829fe2faa5999c1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;c1942a0ca397b627019dace26eca78d8&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;c500dae1ca41236830b59f1467ee96c1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cca227f70a64e1e7fcf5bccdc6cc25dd&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;f188936d2c8423cf064d6b8160769f21&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;f613846eb5bed227ec1a5f8df7e678d0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;fce54b4886cac5c61eda1e7605483ca3&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;sha1&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;sha256&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;bdc4b9f5af9868e028dd0adc10099a4e6656e9f0ad12b2e75a30f5ca0e34489d&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;d3450966ceb2eba93282aace7d7684380d87c6621bbd3c4f621caa079356004a&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;f12df6984bb65d18e2561bd017df29ee1cf946efa5e510802005aeee9035dd53&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;fb9f7fb3c709373523ff27824ed6a31d800e275ec5217d8a11024a3dffb577dd&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;ssdeep&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;filepath&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;C:\\ProgramData&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\ProgramData\\GUP.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\ProgramData\\libcurl.dll&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\ProgramData\\padre1.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\ProgramData\\padre2.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\ProgramData\\padre3.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\Windows\\System32\\cmd.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C:\\Windows\\System32\\esentutl.exe&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;regkey&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;useragent&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;cve&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;cc&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;DPRK&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;Guatemala&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;Japan&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;Macau&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;United States&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;isp&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;asnown&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;incident&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;malware&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;apt.backdoor.win.uppercut&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;topic&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C2&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;backdoor&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;beaconing&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;compromise&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;deletion&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;phishing&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Notes:</p> <ul><li><a href="https://stedolan.github.io/jq/" target="_blank" rel="noopener noreferrer">jq<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> を使用して出力結果を整形しています。</li> <li>上記の出力結果に含まれる URL 及び Domain の値は、念のため Defang しています。</li></ul> <h3 id="sroberts-cacador-⭐️63"><a href="#sroberts-cacador-⭐️63" class="header-anchor">#</a> <a href="https://github.com/sroberts/cacador" target="_blank" rel="noopener noreferrer">sroberts/cacador<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ⭐️63</h3> <p><a href="https://www.sans.org/instructors/scott-roberts" target="_blank" rel="noopener noreferrer">@sroberts<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> が開発している IoC 抽出ツールです。</p> <ul><li>言語: Go</li> <li>サポートする IoC のタイプ: md5, sha1, sha256, sha521, ipv4, ipv6, domain, url, email, doc, exe, flash, img, mac, web, zip, cve</li></ul> <p>Go で書かれており、マルチプラットフォームで簡単に使える点がウリのツールです。</p> <h4 id="実行例-3"><a href="#実行例-3" class="header-anchor">#</a> 実行例</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> input.txt <span class="token operator">|</span> cacador
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;hashes&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">&quot;md5s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;4f83c01e8f7507d23c67ab085bf79e97&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;f188936d2c8423cf064d6b8160769f21&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cca227f70a64e1e7fcf5bccdc6cc25dd&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;aa3f303c3319b14b4829fe2faa5999c1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;182ee99b4f0803628c30411b1faa9992&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;126067d634d94c45084cbe1d9873d895&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;5f45532f947501cf024d84c36e3a19a1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;fce54b4886cac5c61eda1e7605483ca3&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;c1942a0ca397b627019dace26eca78d8&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;f613846eb5bed227ec1a5f8df7e678d0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;50c60f37922ff2ff8733aaeaa9802da5&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;c500dae1ca41236830b59f1467ee96c1&quot;</span>
+   <span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;sha1s&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;sha256s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;bdc4b9f5af9868e028dd0adc10099a4e6656e9f0ad12b2e75a30f5ca0e34489d&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;fb9f7fb3c709373523ff27824ed6a31d800e275ec5217d8a11024a3dffb577dd&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;d3450966ceb2eba93282aace7d7684380d87c6621bbd3c4f621caa079356004a&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;f12df6984bb65d18e2561bd017df29ee1cf946efa5e510802005aeee9035dd53&quot;</span>
+   <span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;sha512s&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;ssdeeps&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;Networks&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">&quot;domains&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;emails&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;ipv4s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;82.221.100.52&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;151.106.53.147&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;153.92.210.208&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;167.99.121.203&quot;</span>
+   <span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;ipv6s&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;urls&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;files&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">&quot;docs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;padre1.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;padre2.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;padre3.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;GUP.txt&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;libcurl.txt&quot;</span>
+   <span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;exes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;certutil.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cmd.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;esentutil.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;esentutl.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;GUP.exe&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;libcurl.dll&quot;</span>
+   <span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;flashes&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;imgs&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;macs&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;webs&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;zips&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;Utilities&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">&quot;cves&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;comments&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;tags&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+   <span class="token string">&quot;&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;time&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-11-07 12:56:39.646107 +0900 JST m=+0.030745840&quot;</span>
+ <span class="token punctuation">}</span>
+</code></pre></div><h2 id="ioc-extractor-の紹介"><a href="#ioc-extractor-の紹介" class="header-anchor">#</a> <a href="https://github.com/ninoseki/ioc-extractor" target="_blank" rel="noopener noreferrer">ioc-extractor<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> の紹介</h2> <p>最後に自作の IoC 抽出ツールである ioc-extractor を紹介します。</p> <p>ioc-extractor は npm パッケージとして公開しています。このため、クライアントサイド・サーバーサイドの両方で使用することができるツールになっています。</p> <h3 id="なぜ-ioc-extractor-を作ったか"><a href="#なぜ-ioc-extractor-を作ったか" class="header-anchor">#</a> なぜ ioc-extractor を作ったか</h3> <p>前述したような既存の IoC 抽出ツールが存在するにも関わらず、なぜ ioc-extracotr を作成したのかというと、これまた自作ツールである <a href="https://github.com/ninoseki/mitaka" target="_blank" rel="noopener noreferrer">Mitaka<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> のためです。</p> <p>Mitaka は Chrome extension で、ブラウザ上で右クリックして選択した値に応じてコンテキストメニューに検索エンジン(VirusTotal, RiskIQ, ZoomEyeなど)を表示させます。</p> <p>&quot;選択した値に応じて&quot;というところがミソで、選択した値が URL なら URL を検索できる検索エンジンのみを表示させたいのです。この要件を満たすために、車輪の再発明感はありますが、npm パッケージとしてこの ioc-extractor を実装しました。</p> <h3 id="ioc-extractor-の実装"><a href="#ioc-extractor-の実装" class="header-anchor">#</a> ioc-extractor の実装</h3> <p>ioc-extractor は、cacador を参考にして実装しました。cacador の基本的な実装を踏襲しつつ、</p> <ul><li>新しいタイプの IoC の追加 (BTC / XMR アドレス、 Google Analytics Tracker ID, Goolge Adsense Publishser IDなど)</li> <li>正規表現の最適化</li></ul> <p>といった改良を行なっています。</p> <h3 id="実行例-4"><a href="#実行例-4" class="header-anchor">#</a> 実行例</h3> <p>ioc-extractor はごく単純な CLI インターフェースを提供しています。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> input.txt <span class="token operator">|</span> ioc-extractor
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;cryptocurrencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;btcs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;126067d634d94c45084cbe1d9873d895&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;182ee99b4f0803628c30411b1faa9992&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;xmrs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;files&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;docs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;GUP.txt&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;libcurl.txt&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;padre1.txt&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;padre2.txt&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;padre3.txt&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;exes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;GUP.exe&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;certutil.exe&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;cmd.exe&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;esentutil.exe&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;esentutl.exe&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;libcurl.dll&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;flashes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;imgs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;macs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;webs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;zips&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;hashes&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;md5s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;126067d634d94c45084cbe1d9873d895&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;182ee99b4f0803628c30411b1faa9992&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;4f83c01e8f7507d23c67ab085bf79e97&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;50c60f37922ff2ff8733aaeaa9802da5&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;5f45532f947501cf024d84c36e3a19a1&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;aa3f303c3319b14b4829fe2faa5999c1&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;c1942a0ca397b627019dace26eca78d8&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;c500dae1ca41236830b59f1467ee96c1&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;cca227f70a64e1e7fcf5bccdc6cc25dd&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;f188936d2c8423cf064d6b8160769f21&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;f613846eb5bed227ec1a5f8df7e678d0&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;fce54b4886cac5c61eda1e7605483ca3&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;sha1s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;sha256s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;bdc4b9f5af9868e028dd0adc10099a4e6656e9f0ad12b2e75a30f5ca0e34489d&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;d3450966ceb2eba93282aace7d7684380d87c6621bbd3c4f621caa079356004a&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;f12df6984bb65d18e2561bd017df29ee1cf946efa5e510802005aeee9035dd53&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;fb9f7fb3c709373523ff27824ed6a31d800e275ec5217d8a11024a3dffb577dd&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;sha512s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ssdeeps&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;networks&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;domains&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;APT.Backdoor[.]Win&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;eservake.jetos[.]com&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;emails&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ipv4s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;151.106.53.147&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;153.92.210.208&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;167.99.121.203&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;82.221.100.52&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ipv6s&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;urls&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;http://151.106.53[.]147/VxQG&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;http://153.92.210[.]208/wBNh1&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;http://eservake.jetos[.]com/qIDj&quot;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;trackers&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;gaTrackIDs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;gaPubIDs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;utilities&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;cves&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Note: 上記の出力結果に含まれる URL 及び Domain の値は、念のため Defang しています。</p> <p>標準入力から抽出した IoC を JSON で出力するだけの単純なものですが、jq と組み合わせることにより様々に活用することができます。</p> <p>例えば下記のコマンドで、クリップボードの中身から IP アドレスを取り出すことができます。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pbpaste <span class="token operator">|</span> ioc-extractor <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.networks.ipv4s | join(&quot;\n&quot;)'</span>
+</code></pre></div><blockquote data-lang="en" class="twitter-tweet"><p lang="en" dir="ltr">How to extract IOCs from clipboard?<br>Try it: <a href="https://t.co/LzFpUgLei3">https://t.co/LzFpUgLei3</a> <a href="https://t.co/70TuWLtw5j">pic.twitter.com/70TuWLtw5j</a></p>— にのせき (@ninoseki) <a href="https://twitter.com/ninoseki/status/1058701953880940544?ref_src=twsrc%5Etfw">November 3, 2018</a></blockquote> <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <p>あるいは、ログファイル(<code>*.log</code>)から メールアドレスだけを抽出することもできます。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-name</span> <span class="token string">'*.log'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">cat</span> <span class="token operator">|</span> ioc-extractor <span class="token operator">|</span> jq <span class="token string">'.networks.emails | join(&quot;\n&quot;)'</span>
+</code></pre></div><h2 id="まとめ"><a href="#まとめ" class="header-anchor">#</a> まとめ</h2> <p>今現時点で存在する IoC 抽出ツールの中で、最も汎用的なものは <a href="https://github.com/cmu-sei/cyobstract" target="_blank" rel="noopener noreferrer">cmu-sei/cyobstract<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> だと思われます。</p> <p>公式に CLI インターフェースが提供されていない点が玉に瑕ですが、本稿に掲載したような簡単な Python スクリプトを作成することでこれを補うことができます。</p> <p>フロントエンド(= JavaScript)で IoC を抽出しようと思うと、現状では ioc-extractor しか選択肢がありません。もし需要があれば使ってみてください。</p> <p>以上です。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c8db5b8a.js" defer></script><script src="/assets/js/2.551672f8.js" defer></script><script src="/assets/js/18.27e8b041.js" defer></script>
+  </body>
+</html>

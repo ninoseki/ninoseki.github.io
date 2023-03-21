@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>An introduction of misp-rb | ninoseki.github.io</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="alternate" type="application/rss+xml" href="https://ninoseki.github.io/rss.xml" title="ninoseki.github.io RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://ninoseki.github.io/feed.atom" title="ninoseki.github.io Atom Feed">
+    <link rel="alternate" type="application/json" href="https://ninoseki.github.io/feed.json" title="ninoseki.github.io JSON Feed">
+    <meta name="description" content="(●__●)">
+    <meta name="twitter:image">
+    <meta property="og:url" content="https://ninoseki.github.io/_posts/2019-10-04-misp-rb.html">
+    <meta name="twitter:url" content="https://ninoseki.github.io/_posts/2019-10-04-misp-rb.html">
+    <meta property="og:title" content="An introduction of misp-rb">
+    <meta name="twitter:title" content="An introduction of misp-rb">
+    <meta itemprop="name" content="An introduction of misp-rb">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:site_name" content="ninoseki.github.io">
+    
+    <link rel="preload" href="/assets/css/0.styles.0313a152.css" as="style"><link rel="preload" href="/assets/js/app.c8db5b8a.js" as="script"><link rel="preload" href="/assets/js/2.551672f8.js" as="script"><link rel="preload" href="/assets/js/22.448af522.js" as="script"><link rel="prefetch" href="/assets/js/10.93b31ecf.js"><link rel="prefetch" href="/assets/js/11.c7100068.js"><link rel="prefetch" href="/assets/js/12.581a6cb7.js"><link rel="prefetch" href="/assets/js/13.4a900d3a.js"><link rel="prefetch" href="/assets/js/14.35bc31c5.js"><link rel="prefetch" href="/assets/js/15.0c5932bf.js"><link rel="prefetch" href="/assets/js/16.299d6e84.js"><link rel="prefetch" href="/assets/js/17.bce521f0.js"><link rel="prefetch" href="/assets/js/18.27e8b041.js"><link rel="prefetch" href="/assets/js/19.e0c00b92.js"><link rel="prefetch" href="/assets/js/20.26e859db.js"><link rel="prefetch" href="/assets/js/21.b30f15e1.js"><link rel="prefetch" href="/assets/js/23.ed0bd195.js"><link rel="prefetch" href="/assets/js/24.ab2bb9e9.js"><link rel="prefetch" href="/assets/js/25.2c17fb30.js"><link rel="prefetch" href="/assets/js/26.5c975520.js"><link rel="prefetch" href="/assets/js/27.53eefe9e.js"><link rel="prefetch" href="/assets/js/28.989fe98b.js"><link rel="prefetch" href="/assets/js/29.ad8c9bc4.js"><link rel="prefetch" href="/assets/js/3.78dae79f.js"><link rel="prefetch" href="/assets/js/30.397b4d86.js"><link rel="prefetch" href="/assets/js/31.924c0225.js"><link rel="prefetch" href="/assets/js/32.13b6de82.js"><link rel="prefetch" href="/assets/js/33.27cd3ddf.js"><link rel="prefetch" href="/assets/js/34.134325a9.js"><link rel="prefetch" href="/assets/js/35.7dc97dee.js"><link rel="prefetch" href="/assets/js/4.7d7fb440.js"><link rel="prefetch" href="/assets/js/5.b3da5054.js"><link rel="prefetch" href="/assets/js/6.5cee6874.js"><link rel="prefetch" href="/assets/js/7.1f1d02f6.js"><link rel="prefetch" href="/assets/js/8.b26ffa7b.js"><link rel="prefetch" href="/assets/js/9.79bb7ce1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0313a152.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ninoseki.github.io</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="page-title"><a href="#page-title" class="header-anchor">#</a> An introduction of misp-rb</h1> <p><span style="color:#999;">2 min read...</span></p> <p>I believe diversity is good and it applies to the programing world.</p> <p>Thus, I'm happy to announce that I released a Ruby gem, <a href="https://github.com/ninoseki/misp-rb" target="_blank" rel="noopener noreferrer">misp-rb<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, to interact with the <a href="https://www.misp-project.org/" target="_blank" rel="noopener noreferrer">MISP<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> REST API.</p> <p>It's not a feature-rich API wrapper like the official <a href="https://github.com/MISP/PyMISP" target="_blank" rel="noopener noreferrer">PyMISP<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> but it works.</p> <h2 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h2> <p>misp-rb is distributed as a Ruby gem.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>gem <span class="token function">install</span> misp
+</code></pre></div><h2 id="configuration"><a href="#configuration" class="header-anchor">#</a> Configuration</h2> <p>By default, it tries to load configurations from environmental variables:</p> <ul><li><code>MISP_API_ENDPOINT</code>: MISP API endpoint (e.g. https://misppriv.circl.lu)</li> <li><code>MISP_API_KEY</code>: MISP API key</li></ul> <p>Also, you can configure them manually.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">require</span> <span class="token string-literal"><span class="token string">&quot;misp&quot;</span></span>
+
+<span class="token constant">MISP</span><span class="token punctuation">.</span>configure <span class="token keyword">do</span> <span class="token operator">|</span>config<span class="token operator">|</span>
+  config<span class="token punctuation">.</span>api_endpoint <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;https://misppriv.circl.lu&quot;</span></span>
+  config<span class="token punctuation">.</span>api_key <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;MISP_API_KEY&quot;</span></span>
+<span class="token keyword">end</span>
+</code></pre></div><h2 id="basic-usage"><a href="#basic-usage" class="header-anchor">#</a> Basic usage</h2> <p>misp-rb provides abstract classes of MISP data models such as Event, Attribute, Tag, Feed, Galaxy, etc.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># create an event</span>
+event <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Event<span class="token punctuation">.</span>create<span class="token punctuation">(</span><span class="token symbol">info</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">&quot;my event&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># get an attribute</span>
+attribute <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Attribute<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment"># get a tag</span>
+tag <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Tag<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><p>Almost every method (excluding <code>delete</code> method) returns an object of a MISP data model.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>event <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Event<span class="token punctuation">.</span>create<span class="token punctuation">(</span><span class="token symbol">info</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">&quot;my event&quot;</span></span><span class="token punctuation">)</span>
+event<span class="token punctuation">.</span>is_a<span class="token operator">?</span><span class="token punctuation">(</span><span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Event<span class="token punctuation">)</span>
+<span class="token comment"># =&gt; true</span>
+
+attribute <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Attribute<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+attribute<span class="token punctuation">.</span>is_a<span class="token operator">?</span><span class="token punctuation">(</span><span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Attribute<span class="token punctuation">)</span>
+<span class="token comment"># =&gt; true</span>
+
+tag <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Tag<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+tag<span class="token punctuation">.</span>is_a<span class="token operator">?</span><span class="token punctuation">(</span><span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Tag<span class="token punctuation">)</span>
+<span class="token comment"># =&gt; true</span>
+
+<span class="token comment"># delete method returns a hash</span>
+event<span class="token punctuation">.</span>delete
+<span class="token comment"># =&gt; {:name=&gt;&quot;Event deleted.&quot;, :message=&gt;&quot;Event deleted.&quot;, :url=&gt;&quot;/events/delete/24&quot;}</span>
+</code></pre></div><p>You can get/set an attribute of an object in a Ruby way.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>event <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span>Event<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span>
+
+p event<span class="token punctuation">.</span>info
+p event<span class="token punctuation">.</span>attributes<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:value</span><span class="token punctuation">)</span>
+
+attribute <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span><span class="token class-name">Attribute</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token symbol">value</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">&quot;1.1.1.1&quot;</span></span><span class="token punctuation">,</span> <span class="token symbol">type</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">&quot;ip-dst&quot;</span></span><span class="token punctuation">)</span>
+event<span class="token punctuation">.</span>attributes <span class="token operator">&lt;&lt;</span> attribute
+
+event<span class="token punctuation">.</span>update
+</code></pre></div><h2 id="practical-usage"><a href="#practical-usage" class="header-anchor">#</a> Practical usage</h2> <p>For example, let's create an event with <a href="https://blog.trendmicro.com/trendlabs-security-intelligence/fakespy-android-information-stealing-malware-targets-japanese-and-korean-speaking-users/" target="_blank" rel="noopener noreferrer">FakeSpy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> hostnames with leveraging VirusTotal API.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">require</span> <span class="token string-literal"><span class="token string">&quot;misp&quot;</span></span>
+<span class="token keyword">require</span> <span class="token string-literal"><span class="token string">&quot;virustotal&quot;</span></span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">api</span></span>
+  <span class="token variable">@api</span> <span class="token operator">||=</span> VirusTotal<span class="token double-colon punctuation">::</span><span class="token class-name">API</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">ipv4s</span></span>
+  <span class="token comment"># FakeSpy IP addresses</span>
+  <span class="token string-literal"><span class="token string">%w(185.222.202.51 45.88.4.234)</span></span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">resolutions</span></span><span class="token punctuation">(</span>ipv4<span class="token punctuation">)</span>
+  <span class="token keyword">begin</span>
+    res <span class="token operator">=</span> api<span class="token punctuation">.</span>ip_address<span class="token punctuation">.</span>resolutions<span class="token punctuation">(</span>ipv4<span class="token punctuation">)</span>
+  <span class="token keyword">rescue</span> <span class="token double-colon punctuation">::</span>VirusTotal<span class="token double-colon punctuation">::</span>Error <span class="token operator">=&gt;</span> _e
+    <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">end</span>
+
+  data <span class="token operator">=</span> res<span class="token punctuation">.</span>dig<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;data&quot;</span></span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  data<span class="token punctuation">.</span>map <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+    item<span class="token punctuation">.</span>dig<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;attributes&quot;</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;host_name&quot;</span></span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span><span class="token punctuation">.</span>compact<span class="token punctuation">.</span>uniq
+<span class="token keyword">end</span>
+
+event <span class="token operator">=</span> <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span><span class="token class-name">Event</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token symbol">info</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">&quot;FakeSpy domains&quot;</span></span><span class="token punctuation">)</span>
+
+hostnames <span class="token operator">=</span> ipv4s<span class="token punctuation">.</span>map <span class="token punctuation">{</span> <span class="token operator">|</span>ipv4<span class="token operator">|</span> resolutions<span class="token punctuation">(</span>ipv4<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">.</span>flatten<span class="token punctuation">.</span>compact<span class="token punctuation">.</span>uniq
+attributes <span class="token operator">=</span> hostnames<span class="token punctuation">.</span>map <span class="token keyword">do</span> <span class="token operator">|</span>hostname<span class="token operator">|</span>
+  <span class="token constant">MISP</span><span class="token double-colon punctuation">::</span><span class="token class-name">Attribute</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token symbol">value</span><span class="token operator">:</span> hostname<span class="token punctuation">,</span> <span class="token symbol">type</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">&quot;hostname&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+event<span class="token punctuation">.</span>attributes <span class="token operator">=</span> attributes
+event<span class="token punctuation">.</span>attributes<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:value</span><span class="token punctuation">)</span>
+<span class="token comment"># =&gt; [&quot;jppost-ku.co&quot;,</span>
+<span class="token comment">#     &quot;jppost-ano.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-ro.co&quot;,</span>
+<span class="token comment">#     &quot;jppost-nu.co&quot;,</span>
+<span class="token comment">#     &quot;jppost-ate.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-atu.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-ati.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-bma.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-bri.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-bmo.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-ato.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-ana.top&quot;,</span>
+<span class="token comment">#     &quot;jppost-bre.top&quot;]</span>
+
+event<span class="token punctuation">.</span>create
+</code></pre></div><p>It works like the following.</p> <p><img src="https://i.imgur.com/7WFdpcX.png" alt="img"></p> <h2 id="appendix-other-misp-api-wrappers"><a href="#appendix-other-misp-api-wrappers" class="header-anchor">#</a> Appendix: other MISP API wrappers</h2> <ul><li>Elixir:
+<ul><li><a href="https://github.com/FloatingGhost/mispex" target="_blank" rel="noopener noreferrer">FloatingGhost/mispex<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li>Go:
+<ul><li><a href="https://github.com/0xrawsec/golang-misp" target="_blank" rel="noopener noreferrer">0xrawsec/golang-misp<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c8db5b8a.js" defer></script><script src="/assets/js/2.551672f8.js" defer></script><script src="/assets/js/22.448af522.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>msticpyでIPジオロケーションデータをマッピングする | ninoseki.github.io</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="alternate" type="application/rss+xml" href="https://ninoseki.github.io/rss.xml" title="ninoseki.github.io RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://ninoseki.github.io/feed.atom" title="ninoseki.github.io Atom Feed">
+    <link rel="alternate" type="application/json" href="https://ninoseki.github.io/feed.json" title="ninoseki.github.io JSON Feed">
+    <meta name="description" content="(●__●)">
+    <meta name="twitter:image">
+    <meta property="og:url" content="https://ninoseki.github.io/_posts/2020-06-09-msticpy-geolocation.html">
+    <meta name="twitter:url" content="https://ninoseki.github.io/_posts/2020-06-09-msticpy-geolocation.html">
+    <meta property="og:title" content="msticpyでIPジオロケーションデータをマッピングする">
+    <meta name="twitter:title" content="msticpyでIPジオロケーションデータをマッピングする">
+    <meta itemprop="name" content="msticpyでIPジオロケーションデータをマッピングする">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:site_name" content="ninoseki.github.io">
+    
+    <link rel="preload" href="/assets/css/0.styles.0313a152.css" as="style"><link rel="preload" href="/assets/js/app.c8db5b8a.js" as="script"><link rel="preload" href="/assets/js/2.551672f8.js" as="script"><link rel="preload" href="/assets/js/26.5c975520.js" as="script"><link rel="prefetch" href="/assets/js/10.93b31ecf.js"><link rel="prefetch" href="/assets/js/11.c7100068.js"><link rel="prefetch" href="/assets/js/12.581a6cb7.js"><link rel="prefetch" href="/assets/js/13.4a900d3a.js"><link rel="prefetch" href="/assets/js/14.35bc31c5.js"><link rel="prefetch" href="/assets/js/15.0c5932bf.js"><link rel="prefetch" href="/assets/js/16.299d6e84.js"><link rel="prefetch" href="/assets/js/17.bce521f0.js"><link rel="prefetch" href="/assets/js/18.27e8b041.js"><link rel="prefetch" href="/assets/js/19.e0c00b92.js"><link rel="prefetch" href="/assets/js/20.26e859db.js"><link rel="prefetch" href="/assets/js/21.b30f15e1.js"><link rel="prefetch" href="/assets/js/22.448af522.js"><link rel="prefetch" href="/assets/js/23.ed0bd195.js"><link rel="prefetch" href="/assets/js/24.ab2bb9e9.js"><link rel="prefetch" href="/assets/js/25.2c17fb30.js"><link rel="prefetch" href="/assets/js/27.53eefe9e.js"><link rel="prefetch" href="/assets/js/28.989fe98b.js"><link rel="prefetch" href="/assets/js/29.ad8c9bc4.js"><link rel="prefetch" href="/assets/js/3.78dae79f.js"><link rel="prefetch" href="/assets/js/30.397b4d86.js"><link rel="prefetch" href="/assets/js/31.924c0225.js"><link rel="prefetch" href="/assets/js/32.13b6de82.js"><link rel="prefetch" href="/assets/js/33.27cd3ddf.js"><link rel="prefetch" href="/assets/js/34.134325a9.js"><link rel="prefetch" href="/assets/js/35.7dc97dee.js"><link rel="prefetch" href="/assets/js/4.7d7fb440.js"><link rel="prefetch" href="/assets/js/5.b3da5054.js"><link rel="prefetch" href="/assets/js/6.5cee6874.js"><link rel="prefetch" href="/assets/js/7.1f1d02f6.js"><link rel="prefetch" href="/assets/js/8.b26ffa7b.js"><link rel="prefetch" href="/assets/js/9.79bb7ce1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0313a152.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ninoseki.github.io</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="page-title"><a href="#page-title" class="header-anchor">#</a> msticpyでIPジオロケーションデータをマッピングする</h1> <p><span style="color:#999;">2 min read...</span></p> <h2 id="msticpyとは"><a href="#msticpyとは" class="header-anchor">#</a> msticpyとは</h2> <p><a href="https://github.com/microsoft/msticpy" target="_blank" rel="noopener noreferrer">msticpy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>(Microsoft Threat Intelligence Python Security Tools)はMicrosoftが開発しているOSSです。</p> <p>具体的にどんなものかというと、Jupyter Notebookにthreat hunting/investigationをするための機能を追加したツールとなります。</p> <p>msticpyが持つ主な機能は以下の3つです。</p> <ul><li>sectools - Python security tools to help with data enrichment, analysis or investigation.</li> <li>nbtools - Jupyter-specific UI tools such as widgets, plotting and other data display.</li> <li>data - data layer and pre-defined queries for Azure Sentinel, MDATP and other data sources.</li></ul> <p>この記事では、msticpyの入門編としてsectools(iocextract &amp; geoip)及びnbtools(foliummap)の機能を使ってIPのジオローケーションデータをマッピングするやり方を紹介します。</p> <h2 id="インストール"><a href="#インストール" class="header-anchor">#</a> インストール</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>pip <span class="token function">install</span> msticpy
+</code></pre></div><h2 id="設定"><a href="#設定" class="header-anchor">#</a> 設定</h2> <p>IPのジオロケーションデータを取得するために、今回は<a href="https://www.maxmind.com/en/home" target="_blank" rel="noopener noreferrer">MaxMind<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>のデータベースを使用します。</p> <p>MaxMindのアカウントを作成し、トークンを<code>MAXMIND_AUTH</code>という名前の環境変数に設定してください。その後、下記の内容の<code>msticpyconfig.yaml</code>を作成してください。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">OtherProviders</span><span class="token punctuation">:</span>
+  <span class="token key atrule">GeoIPLite</span><span class="token punctuation">:</span>
+    <span class="token key atrule">Args</span><span class="token punctuation">:</span>
+      <span class="token key atrule">AuthKey</span><span class="token punctuation">:</span>
+        <span class="token key atrule">EnvironmentVar</span><span class="token punctuation">:</span> <span class="token string">&quot;MAXMIND_AUTH&quot;</span>
+      <span class="token key atrule">DBFolder</span><span class="token punctuation">:</span> <span class="token string">&quot;~/.msticpy&quot;</span>
+    <span class="token key atrule">Provider</span><span class="token punctuation">:</span> <span class="token string">&quot;GeoLiteLookup&quot;</span>
+</code></pre></div><p>これで設定完了です。</p> <h2 id="ノートブックの作成"><a href="#ノートブックの作成" class="header-anchor">#</a> ノートブックの作成</h2> <p>今回は例として下記のフィードからIPを抽出してマッピングしてみます。</p> <ul><li><a href="https://feodotracker.abuse.ch/downloads/ipblocklist.csv%5D" target="_blank" rel="noopener noreferrer">https://feodotracker.abuse.ch/downloads/ipblocklist.csv<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>Jupyter Notebookを起動し、新しいノートブックを作成してください。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>jupyter notebook
+</code></pre></div><h3 id="ipv4の抽出"><a href="#ipv4の抽出" class="header-anchor">#</a> IPv4の抽出</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> IPython<span class="token punctuation">.</span>display <span class="token keyword">import</span> display
+<span class="token keyword">from</span> msticpy<span class="token punctuation">.</span>nbtools<span class="token punctuation">.</span>foliummap <span class="token keyword">import</span> FoliumMap
+<span class="token keyword">from</span> msticpy<span class="token punctuation">.</span>sectools <span class="token keyword">import</span> IoCExtract
+<span class="token keyword">from</span> msticpy<span class="token punctuation">.</span>sectools<span class="token punctuation">.</span>geoip <span class="token keyword">import</span> GeoLiteLookup
+<span class="token keyword">import</span> requests
+
+url <span class="token operator">=</span> <span class="token string">&quot;https://feodotracker.abuse.ch/downloads/ipblocklist.csv&quot;</span>
+
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+text <span class="token operator">=</span> res<span class="token punctuation">.</span>text
+
+<span class="token comment"># Extract IPv4s from the text</span>
+ioc_extractor <span class="token operator">=</span> IoCExtract<span class="token punctuation">(</span><span class="token punctuation">)</span>
+iocs_found <span class="token operator">=</span> ioc_extractor<span class="token punctuation">.</span>extract<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+ip_addr_list <span class="token operator">=</span> iocs_found<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;ipv4&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ip_addr_list<span class="token punctuation">)</span>
+</code></pre></div><p><img src="https://i.imgur.com/O1yd1Sd.png" alt=""></p> <p>抽出したIPアドレスのジオロケーションデータをルックアップし、マッピングします。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># Lookup gelocations</span>
+iplocation <span class="token operator">=</span> GeoLiteLookup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+loc_results<span class="token punctuation">,</span> ip_entries <span class="token operator">=</span> iplocation<span class="token punctuation">.</span>lookup_ip<span class="token punctuation">(</span>ip_addr_list<span class="token operator">=</span>ip_addr_list<span class="token punctuation">)</span>
+
+folium_map <span class="token operator">=</span> FoliumMap<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Set Icon properties to display</span>
+icon_props <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;color&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Add the IP set to the map</span>
+folium_map<span class="token punctuation">.</span>add_ip_cluster<span class="token punctuation">(</span>ip_entities<span class="token operator">=</span>ip_entries<span class="token punctuation">,</span> <span class="token operator">**</span>icon_props<span class="token punctuation">)</span>
+
+<span class="token comment"># Display the map (or just have folium_map</span>
+display<span class="token punctuation">(</span>folium_map<span class="token punctuation">)</span>
+</code></pre></div><p><img src="https://i.imgur.com/VXe1xIQ.png" alt=""></p> <h2 id="notes"><a href="#notes" class="header-anchor">#</a> Notes</h2> <p>msticpyのIoC抽出機能はナイーブな正規表現ベースで実装されています。</p> <ul><li><a href="https://github.com/microsoft/msticpy/blob/a1d53bffdcbfa6a633f440a3dcf7f17a04ebd4c1/msticpy/sectools/iocextract.py#L119-L147" target="_blank" rel="noopener noreferrer">https://github.com/microsoft/msticpy/blob/a1d53bffdcbfa6a633f440a3dcf7f17a04ebd4c1/msticpy/sectools/iocextract.py#L119-L147<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>このため、例えば下記のような文字列からはIoCを抽出できませんので注意が必要です。</p> <p><code>1.1.1[.]1 example[.]com</code></p> <p><img src="https://i.imgur.com/AWpmn4W.png" alt=""></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c8db5b8a.js" defer></script><script src="/assets/js/2.551672f8.js" defer></script><script src="/assets/js/26.5c975520.js" defer></script>
+  </body>
+</html>
