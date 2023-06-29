@@ -24,7 +24,7 @@
     "@vuepress/plugin-google-analytics": "1.9.9",
     "@vuepress/theme-blog": "2.3.3",
     "esm": "3.2.25",
-    "typescript": "4.9.4",
+    "typescript": "5.1.6",
     "vuepress": "1.9.9",
     "vuepress-plugin-reading-time": "0.1.1",
     "vuepress-plugin-typescript": "0.3.1",
