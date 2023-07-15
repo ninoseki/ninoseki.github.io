@@ -2,37 +2,15 @@
   "name": "ninoseki.github.io",
   "version": "1.0.0",
   "description": "(●__●) - Why are you looking into this?",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ninoseki/ninoseki.github.io.git"
-  },
-  "author": "ninoseki",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@limdongjin/vuepress-plugin-simple-seo": "1.0.4-alpha.5",
-    "@vuepress/plugin-active-header-links": "1.9.9",
-    "@vuepress/plugin-back-to-top": "1.9.9",
-    "@vuepress/plugin-blog": "1.9.4",
-    "@vuepress/plugin-google-analytics": "1.9.9",
-    "@vuepress/theme-blog": "2.3.3",
-    "esm": "3.2.25",
-    "typescript": "4.9.4",
-    "vuepress": "1.9.9",
-    "vuepress-plugin-reading-time": "0.1.1",
-    "vuepress-plugin-typescript": "0.3.1",
-    "vuepress-types": "0.9.4"
-  },
-  "dependencies": {
-    "vue": "^2.7.14",
-    "vue-server-renderer": "^2.7.14",
-    "vue-template-compiler": "^2.7.14"
+    "vitepress": "^1.0.0-beta.5"
   }
 }

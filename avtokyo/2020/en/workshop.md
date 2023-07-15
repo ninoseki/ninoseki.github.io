@@ -1,11 +1,4 @@
----
-title: AVTokyo 2020 Phishing Kit Analysis Workshop
-navbar: false
-permalink: /avtokyo/2020/en/workshop/
-sidebar: auto
----
-
-# {{$page.title}}
+# AVTokyo 2020 Phishing Kit Analysis Workshop
 
 ## Topics to be covered
 
@@ -60,7 +53,7 @@ Beginner or intermediate
 
 ### Datetime
 
-31st Oct.  2020 (Sat) 16:30 - 19:00 (JST)
+31st Oct. 2020 (Sat) 16:30 - 19:00 (JST)
 
 ## Trainers
 

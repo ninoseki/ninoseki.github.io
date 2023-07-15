@@ -1,11 +1,4 @@
----
-title: AVTokyo 2020 Phishing Kit Analysis Workshop
-navbar: false
-permalink: /avtokyo/2020/ja/workshop/
-sidebar: auto
----
-
-# {{$page.title}}
+# AVTokyo 2020 Phishing Kit Analysis Workshop
 
 ## Topics to be covered
 
@@ -26,7 +19,7 @@ AVTokyo の Discord サーバーに参加してください。
 その後、下記のチャンネルに参加してください。
 
 - `#04_phishing_workshop_text`
-  - アナウンス + QA用のチャンネル
+  - アナウンス + QA 用のチャンネル
 - `#04_phishing_workshop_voice`
   - ワークショップ用のチャンネル (Voice & screencast)
 
@@ -42,7 +35,7 @@ AVTokyo の Discord サーバーに参加してください。
 
 ### Prerequisites
 
-- スクリプト言語の基本的な知識 (PHPが望ましいです)
+- スクリプト言語の基本的な知識 (PHP が望ましいです)
 - Web アプリについての基本的な知識
 - YARA についての基本的な知識 (必須ではありませんが、もしあれば望ましいです)
 
@@ -56,7 +49,7 @@ AVTokyo の Discord サーバーに参加してください。
 
 ### Datetime
 
-31st Oct.  2020 (Sat) 16:30 - 19:00 (JST)
+31st Oct. 2020 (Sat) 16:30 - 19:00 (JST)
 
 ## Trainers
 
