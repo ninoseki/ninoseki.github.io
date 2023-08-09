@@ -18,5 +18,5 @@ TODOs.md
 .temp
 
 # Docs dist directory
-.vitepress/cache
-.vitepress/dist
+*/.vitepress/cache
+*/.vitepress/dist
