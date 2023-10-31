@@ -22,4 +22,4 @@
 - HITCON 2021
 - Open Compliance Summit Japan 2022: [How I Learned to Stop Worrying and Love the Bom](https://static.sched.com/hosted_files/ocs2022/bd/How_I_Learned_to_Stop_Worrying_and_Love_the_Bom.pdf)
 - JSAC 2023: [Surviving the hurt locker: or How I Learned to Stop Worrying and Love the Bom](https://github.com/ninoseki/jsac2023-sbom-workshop)
-- VirusTotal User Group JP (2023/09/01): [(Sallow) Dive Into Network Entities](https://speakerdeck.com/ninoseki/sallow-dive-into-network-entities)
+- VirusTotal User Group JP (2023/09/01): [(Shallow) Dive Into Network Entities](https://speakerdeck.com/ninoseki/sallow-dive-into-network-entities)
