@@ -7,7 +7,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
-  "author": "",
+  "author": "ninoseki",
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-rc.44"
