@@ -19,7 +19,7 @@
 - AVTOKYO 2020: [Phishing Kit Analysis Workshop](https://speakerdeck.com/ninoseki/avtokyo-2020-phishing-kit-analysis-workshop)
 - JSAC 2021: [GhostDNSbusters - Tracking and Responding to a Large Scale DNS Hijacking Campaign](https://jsac.jpcert.or.jp/archive/2021/pdf/JSAC2021_101_josh-niseki_jp.pdf)
 - DEF CON 29 Recon Village: [Adversary Infrastructure Tracking with Mihari](/presentations/Adversary%20Infrastructure%20Tracking%20with%20Mihari.pdf)
-- HITCON 2021
+- HITCON 2021: [Collaborate from Home: Japan and UK Edition](https://hitcon.org/2021/agenda/9ffcf9d4-8eff-4598-a057-7d090610884d/Security%20in%20the%20new%20normal_%20security%20issues%20related%20to%20the%20pandemic.pdf)
 - Open Compliance Summit Japan 2022: [How I Learned to Stop Worrying and Love the Bom](https://static.sched.com/hosted_files/ocs2022/bd/How_I_Learned_to_Stop_Worrying_and_Love_the_Bom.pdf)
 - JSAC 2023: [Surviving the hurt locker: or How I Learned to Stop Worrying and Love the Bom](https://github.com/ninoseki/jsac2023-sbom-workshop)
 - VirusTotal User Group JP (2023/09/01): [(Shallow) Dive Into Network Entities](https://speakerdeck.com/ninoseki/sallow-dive-into-network-entities)
