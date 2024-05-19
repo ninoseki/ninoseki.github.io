@@ -10,6 +10,6 @@
   "author": "ninoseki",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.1"
+    "vitepress": "1.2.0"
   }
 }
