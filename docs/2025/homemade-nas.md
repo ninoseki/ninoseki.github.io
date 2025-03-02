@@ -3,7 +3,8 @@
 いわゆる mini PC を NAS 化してみたので構築手順をまとめておく。
 
 > [!NOTE]
-> 自分は特に NAS や Samba に詳しいわけではない。。
+> 自分は特に NAS や Samba に詳しいわけではない。
+>
 > 本記事はあくまで自分用のメモだが、同じような環境を構築しようとしている方の参考になればと思って公開する。
 
 ## Objectives/Policies
@@ -277,4 +278,3 @@ ExecStart=/usr/lib/cockpit/cockpit-tls --no-tls
 ## TODO
 
 - SnapRAID を導入する
--
