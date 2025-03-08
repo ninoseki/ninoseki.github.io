@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 # Supercharging VT API With vt-py
 
 ## Agenda
@@ -235,15 +239,20 @@ Also there is `Iterator` which is suitable for VT Intelligence search.
 
 ```py
 for obj in client.iterator(
-    "/intelligence/search", params={"query": "..."}, limit=10, batch_size=10
+    "/intelligence/search", params={"query": "..."},  batch_size=10, limit=100
 ):
     print(obj)
 # or
 async for obj in client.iterator(
-    "/intelligence/search", params={"query": "..."}, limit=10, batch_size=10
+    "/intelligence/search", params={"query": "..."}, batch_size=10, limit=100
 ):
     print(obj)
 ```
+
+- `batch_size`: Maximum number of objects retrieved on each call to the endpoint. If not provided the server will decide how many objects to return.
+- `limit`: Maximum number of objects that will be returned by the iterator. If a limit is not provided the iterator continues until it reaches the last object in the collection.
+
+`batch_size=10, limit=100` iterates over the most recent 100 objects, retrieving them in batches of 10.
 
 ### Feed
 
@@ -267,7 +276,7 @@ VT object data layout:
     "relationships": {},
     "id": "...",
     "links": {
-      "self": "https://www.virustotal.com/ui/files/..."
+      "self": "https://www.virustotal.com/ui/..."
     },
     "type": "..."
   },
@@ -355,30 +364,37 @@ file
 {}
 ```
 
-`attributes` are stored as Python's attributes and you can access it via `#get` or the dot notation.
+`attributes` are stored as `Object` object's attributes and you can access it via the dot notation or `get` method.
 
 ```json
 {
   "data": {
-    "attributes": {...},
-    "id": "<string>",
-    "type": "analysis"
+    "attributes": {
+      "reputation": 0,
+      "first_seen_itw_date": 1582585760,
+      "last_analysis_stats": {
+        "malicious": 0,
+        ...
+      }
+      ...
+    },
+    "id": "...",
+    "type": "file"
   }
 }
 ```
 
 ```py
->>> obj.get("first_seen_itw_date")
-1582585760
->>> obj.first_seen_itw_date
-datetime.datetime(2020, 2, 24, 23, 9, 20)
+>>> obj.reputation
+0
+>>> obj.get("reputation")
+0
 ```
 
-Note tha there a different between `#get` and the dot notation.
+Note that there is a different between `#get` and the dot notation.
 
-`#get` returns an original value.
-
-The dot notation returns a value as `datetime.datetime` if an attribute name matches with any of:
+- `get` method returns an original value.
+- The dot notation returns a value as `datetime.datetime` if an attribute name matches with any of:
 
 - `^.+_date$`
 - `^date$`
@@ -386,10 +402,19 @@ The dot notation returns a value as `datetime.datetime` if an attribute name mat
 - `^user_since$`
 
 ```py
->>> obj.filecondis
-{'raw_md5': 'bcf2bafa8b4e580d7c0f48b4c698f596', 'dhash': '9300009100008090'}
->>> obj.filecondis.raw_md5
-AttributeError: 'WhistleBlowerDict' object has no attribute 'raw_md5'
+>>> obj.first_seen_itw_date
+datetime.datetime(2020, 2, 24, 23, 9, 20)
+>>> obj.get("first_seen_itw_date")
+1582585760
+```
+
+Also note that the dot notation only supports top level fields.
+
+```py
+>>> obj.last_analysis_stats
+{'malicious': 0, ...}
+>>> obj.last_analysis_stats.malicious
+AttributeError: 'WhistleBlowerDict' object has no attribute 'malicious'
 ```
 
 `#to_dict` is for getting the whole data.
@@ -405,6 +430,19 @@ AttributeError: 'WhistleBlowerDict' object has no attribute 'raw_md5'
 
 I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng)).
 
+**Bad**
+
+```py
+# can have AttributeError and KeyError
+obj.pe_info["imphash"]
+# redundant
+obj.get("pe_info", {}).get("imphash")
+```
+
+**Good** (Or Better)
+
+Use `dictpath`, a tiny wrapper of `jsonpath-ng`.
+
 ```py
 # "pip install jsonpath-ng" is needed
 # https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py
@@ -416,7 +454,7 @@ I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h
 >>> dictpath.get(data, "$.attributes.pe_info.imphash")
 ...
 >>> dictpath.get_all(data, "$.attributes.sandbox_verdicts.*.sandbox_name")
-['VirusTotal Jujubox']
+['VirusTotal Jujubox', '...']
 ```
 
 ## Appendix: URL ID Utility
