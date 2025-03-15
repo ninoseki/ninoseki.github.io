@@ -9,13 +9,13 @@ aside: false
 - What is vt-py?
 - Why am I speaking?
 - Why vt-py? (or what's new in modern Python?)
-- So what?
+- Eventually, all at once
 
 In short, this talk gives you insight why were you get the following error in vt-py:
 
 ```py
 >>> client = vt.Client(apikey="dummy")
->>> file = client.get_object("/files/44d88612fea8a8f36de82e1278abb02f")
+>>> obj = client.get_object("/files/44d88612fea8a8f36de82e1278abb02f")
 >>> exit()
 Unclosed connector
 ```
@@ -42,7 +42,7 @@ vt-py is an **asyncio** native client library (based on [aio-libs/aiohttp](https
 
 ### What's New in Modern Python?
 
-#### asyncio (Since Python 3.4)
+#### asyncio (Python 3.4+)
 
 > asyncio is a library to write concurrent code using the async/await syntax.
 > asyncio is used as a foundation for multiple Python asynchronous frameworks that provide high-performance network and web-servers, database connection libraries, distributed task queues, etc.
@@ -53,32 +53,7 @@ vt-py is an **asyncio** native client library (based on [aio-libs/aiohttp](https
 ![img](https://devopedia.org/images/article/280/6110.1593611188.png)
 (Source: https://devopedia.org/asynchronous-programming-in-python)
 
-```py
-import asyncio
-from collections.abc import Coroutine
-from typing import Any
-
-import httpx
-
-
-async def main():
-    urls: list[str] = [
-        "http://example.com",
-        "http://example.net",
-        "http://example.org",
-    ]
-    async with httpx.AsyncClient() as client:
-        coroutines: list[Coroutine[Any, Any, httpx.Response]] = [
-            client.get(url) for url in urls
-        ]
-        responses: list[httpx.Response] = await asyncio.gather(*coroutines)
-
-    for res in responses:
-        print(res.url, res.status_code)  # noqa: T201
-
-
-asyncio.run(main())
-```
+<<< @/vt/asyncio_sample.py
 
 #### Type Hints (Python 3.5+)
 
@@ -141,48 +116,21 @@ async with vt.Client(apikey="...") as client:
 ```py
 hashes: list[str] = ["..."]
 
-async with vt.Client(apikey="dummy") as client:
+async with vt.Client(apikey="...") as client:
     coroutines = [client.get_object_async(f"/files/{h}") for h in hashes]
     objects: list[vt.Object] = await asyncio.gather(*coroutines)
 
 for obj in objects:
-    print(obj.id, obj.type)  # noqa: T201
+    print(obj.id, obj.type)
 ```
 
-Note that the above example is not a good example since it may violate the rate limit.
+Note that the above example is not a good example since it may sends many requests at once.
 
-> The Public API is limited to 500 requests per day and a rate of 4 requests per minute.
-> The Public API must not be used in commercial products or services.
->
-> The Premium API does not have request rate or daily allowance limitations, limits are governed by your licensed service step.
->
-> --- https://docs.virustotal.com/reference/public-vs-premium-api
-
-You have to manage [Semaphore](https://docs.python.org/3/library/asyncio-sync.html#semaphore). But it's bothersome.
+You have to manage [Semaphore](https://docs.python.org/3/library/asyncio-sync.html#semaphore) and it's bothersome.
 
 So I recommend to use [florimondmanca/aiometer](https://github.com/florimondmanca/aiometer).
 
-```py
-hashes: list[str] = ["..."]
-
-async with vt.Client(apikey="...") as client:
-
-    async def get_file(client: vt.Client, h: str):
-        return await client.get_object_async(f"/files/{h}")
-
-    tasks: list[Callable[..., Awaitable[vt.Object]]] = [
-        partial(get_file, client, h) for h in hashes
-    ]
-    # max_at_once: this is used to limit the maximum number of concurrently running tasks at any given time.
-    # max_per_second: this option limits the number of tasks spawned per second.
-    #                 This is useful to not overload I/O resources, such as servers that may have a rate limiting policy in place.
-    objects: list[vt.Object] = await aiometer.run_all(
-        tasks, max_at_once=2, max_per_second=2
-    )
-
-for obj in objects:
-    print(obj.id, obj.type)  # noqa: T201
-```
+<<< @/vt/aiometer_sample.py
 
 ### Appendix: Why and What Is the `with` statement?
 
@@ -279,9 +227,6 @@ VT object data layout:
       "self": "https://www.virustotal.com/ui/..."
     },
     "type": "..."
-  },
-  "meta": {
-    "cursor": "..."
   }
 }
 ```
@@ -292,11 +237,10 @@ VT object data layout:
 - `attributes`: Object attributes.
 - `context_attributes`: Context attributes. Automatically added by VT through analysis?. Optional.
 - `relationships`: Links or dependencies between objects. Should be explicitly requested via `relationships` query parameters. Optional.
-- `meta`: Metadata for pagination. cursor, days_back, etc. Optional.
 
 **FileBehavior context_attributes** (Feed only?)
 
-> The FileBehaviour object will contain an extra attribute (context_attributes), which is a JSON structure that contains links for downloading the PCAP, HTML, EVTX and memdump files generated in the analysis through our API without consuming your quota (bear in mind that you will have to use your API Key and add it to the request headers in order to get access to the behaviour reports pointed by those two links).
+> The FileBehavior object will contain an extra attribute (context_attributes), which is a JSON structure that contains links for downloading the PCAP, HTML, EVTX and memdump files generated in the analysis through our API without consuming your quota (bear in mind that you will have to use your API Key and add it to the request headers in order to get access to the behaviour reports pointed by those two links).
 >
 > --- https://docs.virustotal.com/reference/feeds-file-behaviour
 
@@ -322,6 +266,9 @@ client.get_object(
 )
 ```
 
+- `communicating_files`: lists all files presenting any sort of traffic to the given IP address at some point of its execution.
+- `downloaded_files`: returns a list of files that were available from an URL under the given IP address at some moment.
+
 ```json
 "relationships": {
   "communicating_files": {
@@ -345,7 +292,7 @@ client.get_object(
 }
 ```
 
-vt-py's `Object`' fields:
+`vt.Object` attributes:
 
 - `id`: SHA256 (`file`), domain (`domain`), URL SHA256 (`url`), etc.
 - `type`: `file`, `domain`, `url`, etc.
@@ -364,7 +311,9 @@ file
 {}
 ```
 
-`attributes` are stored as `Object` object's attributes and you can access it via the dot notation or `get` method.
+#### Playing With Attributes
+
+`attributes` are stored as `Object` instance's attributes and you can access it via the dot notation or `get` method.
 
 ```json
 {
@@ -395,11 +344,10 @@ Note that there is a different between `#get` and the dot notation.
 
 - `get` method returns an original value.
 - The dot notation returns a value as `datetime.datetime` if an attribute name matches with any of:
-
-- `^.+_date$`
-- `^date$`
-- `^last_login$`
-- `^user_since$`
+  - `^.+_date$`
+  - `^date$`
+  - `^last_login$`
+  - `^user_since$`
 
 ```py
 >>> obj.first_seen_itw_date
@@ -408,7 +356,7 @@ datetime.datetime(2020, 2, 24, 23, 9, 20)
 1582585760
 ```
 
-Also note that the dot notation only supports top level fields.
+Also note that the dot notation only supports top level attributes.
 
 ```py
 >>> obj.last_analysis_stats
@@ -428,9 +376,9 @@ AttributeError: 'WhistleBlowerDict' object has no attribute 'malicious'
 }
 ```
 
-I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng)).
+I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng)) when interacting with complex/nested attributes.
 
-**Bad**
+**Bad** (Or Not So Good)
 
 ```py
 # can have AttributeError and KeyError
@@ -456,6 +404,107 @@ Use `dictpath`, a tiny wrapper of `jsonpath-ng`.
 >>> dictpath.get_all(data, "$.attributes.sandbox_verdicts.*.sandbox_name")
 ['VirusTotal Jujubox', '...']
 ```
+
+## Eventually, All at Once
+
+### Hunting URLs With Intelligence Search
+
+> [!NOTE]
+>
+> [ducaale/xh](https://github.com/ducaale/xh): Friendly and fast tool for sending HTTP requests.
+
+```bash
+# brew install xh jq
+# or
+# choco install xh jq
+$ xh https://www.virustotal.com/api/v3/intelligence/search x-apikey:... query=="entity:url ..."
+{
+  "data": [
+    {
+      "id": "...",
+      "type": "url",
+      "links": {},
+      "attributes": {},
+      "context_attributes": {
+        "url": "..."
+      }
+    }
+  ]
+}
+$ xh https://www.virustotal.com/api/v3/intelligence/search x-apikey:... query=="entity:url ..." | jq -r ".data[].context_attributes.url"
+```
+
+```py
+import vt
+
+
+with vt.Client(apikey="...") as client:
+    for obj in client.iterator(
+        "/intelligence/search", params={"query": "entity:url AND (ls:2025-03-01T00:00:00+ AND ls:2025-04-01T00:00:00-) AND ...."}
+    ):
+        url: str | None = obj.context_attributes.get("url")
+        if url is None:
+            continue
+
+        do_something(url)
+```
+
+### VT Intelligence Searches to Network IoCs
+
+<<< @/vt/intelligence_search_to_network_infrastructure.py
+
+```bash
+$ uv run intelligence_search_to_network_infrastructure.py "entity:file AND sha256:7c347a029d0d8600dc58885d6f359517e093f9f13ccb9a697c2655ed5f87f4d"
+=== Results: ===
+DOMAIN: acroipm2.adobe.com
+DOMAIN: cloud.ccm19.de
+DOMAIN: content-autofill.googleapis.com
+DOMAIN: edgedl.me.gvt1.com
+DOMAIN: google.com
+DOMAIN: i.lencr.org
+DOMAIN: ka-f.fontawesome.com
+DOMAIN: kit.fontawesome.com
+DOMAIN: media-exp1.licdn.com
+DOMAIN: media.licdn.com
+DOMAIN: media.tagembed.com
+DOMAIN: platform.linkedin.com
+DOMAIN: s3.us-west-1.wasabisys.com
+DOMAIN: widget.tagembed.com
+DOMAIN: www.eicar.org
+DOMAIN: www.youtube.com
+DOMAIN: x1.i.lencr.org
+IP_ADDRESS: 104.18.40.68
+IP_ADDRESS: 104.21.26.223
+IP_ADDRESS: 104.244.42.8
+IP_ADDRESS: 104.26.6.103
+IP_ADDRESS: 104.26.7.103
+IP_ADDRESS: 104.26.9.185
+IP_ADDRESS: 13.107.42.14
+IP_ADDRESS: 142.250.125.94
+IP_ADDRESS: 142.251.143.106
+IP_ADDRESS: 142.251.143.110
+IP_ADDRESS: 142.251.143.138
+IP_ADDRESS: 142.251.143.142
+IP_ADDRESS: 142.251.143.163
+IP_ADDRESS: 142.251.143.170
+IP_ADDRESS: 142.251.143.174
+IP_ADDRESS: 142.251.143.202
+IP_ADDRESS: 142.251.143.206
+IP_ADDRESS: 148.251.5.29
+IP_ADDRESS: 152.199.21.118
+IP_ADDRESS: 172.64.147.188
+URL: http://x1.i.lencr.org/
+```
+
+#### Appendix: Inline Script Metadata (PEP 723)
+
+> [!NOTE]
+>
+> [Inline script metadata](https://packaging.python.org/en/latest/specifications/inline-script-metadata/) allows you to define dependencies required for a script.
+>
+> [pypa/hatch](https://github.com/pypa/hatch), [astral-sh/uv](https://github.com/astral-sh/uv), etc. support it.
+>
+> `uv run` with the inline script metadata installs dependencies in a venv under `~/.cache/uv/`.
 
 ## Appendix: URL ID Utility
 
