@@ -1,5 +1,5 @@
 ---
-aside: false
+layout: home
 ---
 
 # Supercharging VT API With vt-py
@@ -32,6 +32,12 @@ And how to use it well.
 pip install vt-py
 ```
 
+vt-py can:
+
+- Get/scan/download/post an object
+  - Including [creating a retrrohunt job](https://virustotal.github.io/vt-py/quickstart.html#start-and-abort-a-retrohunt-job) and [creating livehunt ruleset](https://virustotal.github.io/vt-py/quickstart.html#create-a-livehunt-ruleset).
+- Search with iteration
+
 ## Why am I Speaking?
 
 [I'm one of contributors](https://github.com/VirusTotal/vt-py/releases/tag/0.18.0) so.
@@ -62,6 +68,32 @@ vt-py is an **asyncio** native client library (based on [aio-libs/aiohttp](https
 > By declaring types for your variables, editors and tools can give you better support.
 >
 > --- https://fastapi.tiangolo.com/python-types/
+
+#### Appendix: Inline Script Metadata (PEP 723)
+
+[Inline script metadata](https://packaging.python.org/en/latest/specifications/inline-script-metadata/) allows you to define dependencies required for a script.
+[pypa/hatch](https://github.com/pypa/hatch), [astral-sh/uv](https://github.com/astral-sh/uv), etc. support it.
+`uv run` with the inline script metadata installs dependencies in an isolated venv per script under `~/.cache/uv`.
+
+```py
+# /// script
+# dependencies = [
+#   "vt-py==0.19.0",
+# ]
+# ///
+
+import vt
+
+print(vt.__version__)
+print(vt.__file__)
+```
+
+```bash
+$ uv run test.py
+Installed 11 packages in 13ms
+0.19.0
+~/.cache/uv/environments-v2/test-8507df15a68ed868/lib/python3.12/site-packages/vt/__init__.py
+```
 
 ### vt-py 101
 
@@ -389,11 +421,10 @@ obj.get("pe_info", {}).get("imphash")
 
 **Good** (Or Better)
 
-Use `dictpath`, a tiny wrapper of `jsonpath-ng`.
+Use [dictpath](https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py), a tiny wrapper of `jsonpath-ng`.
 
 ```py
 # "pip install jsonpath-ng" is needed
-# https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py
 >>> import dictpath
 >>> obj = vt.Object(...)
 >>> data = obj.to_dict()
@@ -449,6 +480,12 @@ with vt.Client(apikey="...") as client:
         do_something(url)
 ```
 
+### VT Intelligence Search to Pandas
+
+<<< @/vt/pandas_sample.py
+
+![img](https://i.imgur.com/Qwo87jI.png)
+
 ### VT Intelligence Searches to Network IoCs
 
 <<< @/vt/intelligence_search_to_network_infrastructure.py
@@ -494,29 +531,4 @@ IP_ADDRESS: 148.251.5.29
 IP_ADDRESS: 152.199.21.118
 IP_ADDRESS: 172.64.147.188
 URL: http://x1.i.lencr.org/
-```
-
-#### Appendix: Inline Script Metadata (PEP 723)
-
-> [!NOTE]
->
-> [Inline script metadata](https://packaging.python.org/en/latest/specifications/inline-script-metadata/) allows you to define dependencies required for a script.
->
-> [pypa/hatch](https://github.com/pypa/hatch), [astral-sh/uv](https://github.com/astral-sh/uv), etc. support it.
->
-> `uv run` with the inline script metadata installs dependencies in a venv under `~/.cache/uv/`.
-
-## Appendix: URL ID Utility
-
-> Whenever we talk about an URL identifier in this documentation we are referring to a sequence of characters that uniquely identify a specific URL. Those identifiers can adopt two forms:
->
-> - The SHA-256 of the canonized URL.
-> - The string resulting from encoding the URL in base64 (without the "=" padding).
->
-> --- https://docs.virustotal.com/reference/url
-
-```py
->>> import vt
->>> vt.url_id("https://example.com")
-aHR0cHM6Ly9leGFtcGxlLmNvbQ
 ```
