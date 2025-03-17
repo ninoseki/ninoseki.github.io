@@ -188,21 +188,18 @@ def main(
     async def inner():
         handler = VTISearchToNetworkInfrastructureHandler(Secret(str(key)))
 
-        try:
-            enqueue_files_task = asyncio.create_task(
-                handler.get_matching_files(query, limit)
-            )
-            _ = asyncio.create_task(handler.get_network())  # noqa: RUF006
-            _ = asyncio.create_task(handler.build_network())  # noqa: RUF006
+        enqueue_files_task = asyncio.create_task(
+            handler.get_matching_files(query, limit)
+        )
+        _ = asyncio.create_task(handler.get_network())  # noqa: RUF006
+        _ = asyncio.create_task(handler.build_network())  # noqa: RUF006
 
-            await asyncio.gather(enqueue_files_task)
+        await asyncio.gather(enqueue_files_task)
 
-            await handler.files_queue.join()
-            await handler.queue.join()
+        await handler.files_queue.join()
+        await handler.queue.join()
 
-            handler.print_results()
-        except Exception as e:
-            logger.error(f"ERROR: {e}")
+        handler.print_results()
 
     asyncio.run(inner())
 

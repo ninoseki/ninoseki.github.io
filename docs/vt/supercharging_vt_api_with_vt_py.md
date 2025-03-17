@@ -215,14 +215,29 @@ class Client:
 
 ### Iterator
 
-Also there is `Iterator` which is suitable for VT Intelligence search.
+Also there is `Iterator` which is suitable for handling continuation cursor (e.g. Intelligence search).
+
+```json
+{
+  "meta": {
+    "cursor": "..."
+  },
+  "data": []
+}
+```
 
 ```py
+# Intelligence search
 for obj in client.iterator(
     "/intelligence/search", params={"query": "..."},  batch_size=10, limit=100
 ):
     print(obj)
-# or
+
+# IoC stream
+for obj in client.iterator("/ioc-stream"):
+    print(obj)
+
+# async ver.
 async for obj in client.iterator(
     "/intelligence/search", params={"query": "..."}, batch_size=10, limit=100
 ):
@@ -239,7 +254,8 @@ async for obj in client.iterator(
 ```py
 for obj in client.feed(vt.FeedType.URLS):
     print(obj)
-# or
+
+# async ver.
 async for obj in client.feed(vt.FeedType.URLS):
     print(obj)
 ```
