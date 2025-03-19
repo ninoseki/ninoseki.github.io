@@ -36,7 +36,7 @@ vt-py can:
 
 - Get/scan/download/post an object
   - Including [creating a retrrohunt job](https://virustotal.github.io/vt-py/quickstart.html#start-and-abort-a-retrohunt-job) and [creating livehunt ruleset](https://virustotal.github.io/vt-py/quickstart.html#create-a-livehunt-ruleset).
-- Search with iteration
+- Handling continuation cursor (e.g. Intelligence search).
 
 ## Why am I Speaking?
 
@@ -58,8 +58,6 @@ vt-py is an **asyncio** native client library (based on [aio-libs/aiohttp](https
 
 ![img](https://devopedia.org/images/article/280/6110.1593611188.png)
 (Source: https://devopedia.org/asynchronous-programming-in-python)
-
-<<< @/vt/asyncio_sample.py
 
 #### Type Hints (Python 3.5+)
 
@@ -155,14 +153,6 @@ async with vt.Client(apikey="...") as client:
 for obj in objects:
     print(obj.id, obj.type)
 ```
-
-Note that the above example is not a good example since it may sends many requests at once.
-
-You have to manage [Semaphore](https://docs.python.org/3/library/asyncio-sync.html#semaphore) and it's bothersome.
-
-So I recommend to use [florimondmanca/aiometer](https://github.com/florimondmanca/aiometer).
-
-<<< @/vt/aiometer_sample.py
 
 ### Appendix: Why and What Is the `with` statement?
 
