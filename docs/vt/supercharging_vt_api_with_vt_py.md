@@ -154,7 +154,7 @@ for obj in objects:
     print(obj.id, obj.type)
 ```
 
-### Appendix: Why and What Is the `with` statement?
+### Appendix: Why and What Is the `with` Statement?
 
 > The with statement is used to wrap the execution of a block with methods defined by a context manager.
 >
@@ -414,9 +414,11 @@ AttributeError: 'WhistleBlowerDict' object has no attribute 'malicious'
 }
 ```
 
+##### Appendix: Playing With Complex (Nested) Attributes
+
 I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng)) when interacting with complex/nested attributes.
 
-**Bad** (Or Not So Good)
+**Bad** (Or not so good)
 
 ```py
 # can have AttributeError and KeyError
@@ -425,7 +427,7 @@ obj.pe_info["imphash"]
 obj.get("pe_info", {}).get("imphash")
 ```
 
-**Good** (Or Better)
+**Good** (Or better)
 
 Use [dictpath](https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py), a tiny wrapper of `jsonpath-ng`.
 
@@ -477,7 +479,7 @@ import vt
 
 with vt.Client(apikey="...") as client:
     for obj in client.iterator(
-        "/intelligence/search", params={"query": "entity:url AND (ls:2025-03-01T00:00:00+ AND ls:2025-04-01T00:00:00-) AND ...."}
+        "/intelligence/search", params={"query": "entity:url ...."}
     ):
         url: str | None = obj.context_attributes.get("url")
         if url is None:
