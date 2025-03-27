@@ -102,7 +102,7 @@ with vt.Client(apikey="...") as client:
     obj = client.get_object("/files/44d88612fea8a8f36de82e1278abb02f")
 ```
 
-Note that even it looks non-async, asyncio works under the hood.
+It looks non-async. But asyncio works under the hood.
 
 ```py
 # vt-py/vt/client.py
@@ -414,6 +414,25 @@ AttributeError: 'WhistleBlowerDict' object has no attribute 'malicious'
 }
 ```
 
+> [!NOTE]
+>
+> `#to_dict` result is a dict but it has `collections.UserDict` (= `vt.object.WhistleBlowerDict`) inside. Thus converting it as a JSON is a bit tricky. See the below appendix for details.
+
+##### Appendix: `#to_dict` to JSON
+
+You have to use `UserDictJsonEncoder` when serializing `#to_dict` result as a JSON. Otherwise you will get `TypeError: Type is not JSON serializable: WhistleBlowerDict`.
+
+```py
+import json
+
+import vt
+from vt.object import UserDictJsonEncoder
+
+obj = vt.Object(...)
+
+json_str = json.dumps(obj.to_dict(), cls=UserDictJsonEncoder)
+```
+
 ##### Appendix: Playing With Complex (Nested) Attributes
 
 I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng)) when interacting with complex/nested attributes.
@@ -491,8 +510,6 @@ with vt.Client(apikey="...") as client:
 ### VT Intelligence Search to Pandas
 
 <<< @/vt/pandas_sample.py
-
-![img](https://i.imgur.com/Qwo87jI.png)
 
 ### VT Intelligence Searches to Network IoCs
 

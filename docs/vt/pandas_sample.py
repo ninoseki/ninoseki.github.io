@@ -7,6 +7,8 @@
 # ///
 
 
+import collections
+
 import arakawa as ar
 import pandas as pd
 import vt
@@ -25,11 +27,31 @@ with vt.Client(str(VT_API_KEY)) as client:
     )
 
 
-records = [obj.to_dict()["attributes"] for obj in objects]
+def extract_attributes_with_url(obj: vt.Object) -> dict:
+    # extract attributes and add url in context_attributes
+    attributes = obj.to_dict()["attributes"]
+    attributes["url"] = obj.context_attributes.get("url")
+    return attributes
 
-df = pd.DataFrame.from_records(records)
+
+data = [extract_attributes_with_url(obj) for obj in objects]
+
+
+def normalize_dict(obj: dict):
+    # convert all the UserDict (WhistleBlowerDict) into plain dict
+    # otherwise json_normalize cannot flat the table
+    for key, value in obj.items():
+        if isinstance(value, collections.UserDict):
+            obj[key] = normalize_dict(value.data)
+    return obj
+
+
+normalized_data = [normalize_dict(obj) for obj in data]
+
+df = pd.json_normalize(normalized_data)
 
 ar.Report(
     ar.DataTable(df),
-    df["tld"].value_counts().to_frame(),
+    df["title"].value_counts().to_frame(),
+    df["favicon.raw_md5"].value_counts().to_frame(),
 ).save("sample.html", open=True)
