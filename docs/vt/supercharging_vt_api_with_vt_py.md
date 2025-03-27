@@ -11,7 +11,7 @@ layout: home
 - Why vt-py? (or what's new in modern Python?)
 - Eventually, all at once
 
-In short, this talk gives you insight why were you get the following error in vt-py:
+In short, this talk gives you insight why were you get the following warning in vt-py:
 
 ```py
 >>> client = vt.Client(apikey="dummy")
@@ -433,9 +433,13 @@ obj = vt.Object(...)
 json_str = json.dumps(obj.to_dict(), cls=UserDictJsonEncoder)
 ```
 
+> [!NOTE]
+>
+> I created a PR ([vt-py#211](https://github.com/VirusTotal/vt-py/pull/211)) to address this issue and I wish it will be shipped in a next version soon.
+
 ##### Appendix: Playing With Complex (Nested) Attributes
 
-I recommend to use `dictpath` (based on [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng)) when interacting with complex/nested attributes.
+I recommend to use [dictpath](https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py) when interacting with complex/nested attributes.
 
 **Bad** (Or not so good)
 
@@ -448,19 +452,56 @@ obj.get("pe_info", {}).get("imphash")
 
 **Good** (Or better)
 
-Use [dictpath](https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py), a tiny wrapper of `jsonpath-ng`.
+Use [dictpath](https://github.com/VirusTotal/vt-py/blob/master/examples/utils/dictpath.py), a tiny wrapper of [h2non/jsonpath-ng](https://github.com/h2non/jsonpath-ng).
+
+```json
+{
+  "data": {
+    "id": "...",
+    "type": "file",
+    "attributes": {
+      "pe_info": {
+        "sections": [
+          {
+            "name": "UPX0",
+            "chi2": -1.0,
+            "virtual_address": 4096,
+            "entropy": 0.0,
+            "raw_size": 0,
+            "flags": "rwx",
+            "virtual_size": 1458176,
+            "md5": "d41d8cd98f00b204e9800998ecf8427e"
+          },
+          ...
+        ]
+      },
+      "sandbox_verdicts": {
+        "Zenbox": {
+          "category": "harmless",
+          "confidence": 1,
+          "sandbox_name": "Zenbox",
+          "malware_classification": [
+            "CLEAN"
+          ]
+        },
+        ...
+      }
+      ...
+    }
+  }
+}
+
+```
 
 ```py
 # "pip install jsonpath-ng" is needed
 >>> import dictpath
 >>> obj = vt.Object(...)
 >>> data = obj.to_dict()
->>> dictpath.get(data, "$.id")
-...
->>> dictpath.get(data, "$.attributes.pe_info.imphash")
-...
+>>> dictpath.get_all(data, "$.attributes.pe_info.sections[*].md5")
+['d41d8cd98f00b204e9800998ecf8427e', ...]
 >>> dictpath.get_all(data, "$.attributes.sandbox_verdicts.*.sandbox_name")
-['VirusTotal Jujubox', '...']
+['Zenbox', ...]
 ```
 
 ## Eventually, All at Once
@@ -487,10 +528,16 @@ $ xh https://www.virustotal.com/api/v3/intelligence/search x-apikey:... query=="
         "url": "..."
       }
     }
-  ]
+  ],
+  "meta": {
+    "cursor": "...",
+    ...
+  },
 }
 $ xh https://www.virustotal.com/api/v3/intelligence/search x-apikey:... query=="entity:url ..." | jq -r ".data[].context_attributes.url"
 ```
+
+Simple enough. But how do you handle continuation cursor (`meta.cursor`)?
 
 ```py
 import vt

@@ -40,9 +40,12 @@ data = [extract_attributes_with_url(obj) for obj in objects]
 def normalize_dict(obj: dict):
     # convert all the UserDict (WhistleBlowerDict) into plain dict
     # otherwise json_normalize cannot flat the table
-    for key, value in obj.items():
-        if isinstance(value, collections.UserDict):
-            obj[key] = normalize_dict(value.data)
+    # NOTE: this function will be useless if https://github.com/VirusTotal/vt-py/pull/211 gets merged
+    for k, v in obj.items():
+        if isinstance(v, collections.UserDict):
+            obj[k] = normalize_dict(v.data)
+        elif isinstance(v, dict):
+            obj[k] = normalize_dict(v)
     return obj
 
 
