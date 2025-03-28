@@ -508,6 +508,8 @@ Use [dictpath](https://github.com/VirusTotal/vt-py/blob/master/examples/utils/di
 
 ### Hunting URLs With Intelligence Search
 
+**curl/xh ver.**
+
 > [!NOTE]
 >
 > [ducaale/xh](https://github.com/ducaale/xh): Friendly and fast tool for sending HTTP requests.
@@ -538,6 +540,20 @@ $ xh https://www.virustotal.com/api/v3/intelligence/search x-apikey:... query=="
 ```
 
 Simple enough. But how do you handle continuation cursor (`meta.cursor`)?
+
+**vt-cli ver.**
+
+```bash
+# brew install virustotal-cli
+# or
+# choco install vt-cli
+$ vt search "entity:url ..." --format json | jq -r ".[]._context_attributes.url"
+MORE WITH:
+vt search 'entity:url p:1+' --format=json --cursor=...
+...
+```
+
+**vt-py ver.**
 
 ```py
 import vt
