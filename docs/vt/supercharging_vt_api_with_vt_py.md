@@ -418,7 +418,15 @@ AttributeError: 'WhistleBlowerDict' object has no attribute 'malicious'
 >
 > `#to_dict` result is a dict but it has `collections.UserDict` (= `vt.object.WhistleBlowerDict`) inside. Thus converting it as a JSON is a bit tricky. See the below appendix for details.
 
+> [!Important]
+>
+> Update: the above issue is fixed in the latest version (0.20.0).
+
 ##### Appendix: `#to_dict` to JSON
+
+> [!Important]
+>
+> Update: you need the following hack only when using vt-py <0.20.0. >=0.20.0 doesn't need the hack.
 
 You have to use `UserDictJsonEncoder` when serializing `#to_dict` result as a JSON. Otherwise you will get `TypeError: Type is not JSON serializable: WhistleBlowerDict`.
 
@@ -436,6 +444,10 @@ json_str = json.dumps(obj.to_dict(), cls=UserDictJsonEncoder)
 > [!NOTE]
 >
 > I created a PR ([vt-py#211](https://github.com/VirusTotal/vt-py/pull/211)) to address this issue and I wish it will be shipped in a next version soon.
+
+> [!Important]
+>
+> Update: it's been merged and shipped as v0.20.0!
 
 ##### Appendix: Playing With Complex (Nested) Attributes
 
