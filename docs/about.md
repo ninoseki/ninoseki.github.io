@@ -25,3 +25,4 @@
 - VirusTotal User Group JP (2023/09/01): [(Shallow) Dive Into Network Entities](https://speakerdeck.com/ninoseki/sallow-dive-into-network-entities)
 - JSAC 2024: [JSAC2024 Mihari Workshop](https://ninoseki.github.io/jsac_mihari_workshop/)
 - VirusTotal User Group JP (2025/03/29): [Supercharging VT API With vt-py](https://ninoseki.github.io/vt/supercharging_vt_api_with_vt_py.html)
+- JSAC 2026: [Leveraging EML Analyzer to triage malicious email messages during incident response](https://jsac.jpcert.or.jp/archive/2026/pdf/JSAC2026_workshop1_en.pdf)
